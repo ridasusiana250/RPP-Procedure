@@ -1,0 +1,6 @@
+{
+  "name": "ProcedureCraft: RPP TPACK & MPI Interaktif Bahasa Inggris XI",
+  "description": "Platform Desain Pembelajaran Digital Terintegrasi: RPP Berbasis TPACK & Deep Learning beserta Media Pembelajaran Interaktif (MPI) Mandiri Bahasa Inggris Kelas XI Materi Procedure Text.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

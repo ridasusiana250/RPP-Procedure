@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProcedureCraft: Interactive Learning Media (Grade XI)</title>
+  <!--
+    =============================================================================
+    MEDIA PEMBELAJARAN INTERAKTIF (MPI) - BAHASA INGGRIS KELAS XI
+    Materi Pokok   : Procedure Text (Manuals, Recipes, Tips, Protocols)
+    Kerangka Kerja : TPACK (Advancing Level) & Deep Learning
+    Teknis         : Single-File Pure HTML5, CSS3, & Vanilla JavaScript (No External CDN)
+    Instruksi Guru : Cukup klik ganda (double-click) file ini untuk membuka di browser apa pun (Chrome, Edge, Firefox, Safari).
+                     Bisa dijalankan 100% offline tanpa koneksi internet.
+    =============================================================================
+  -->
+  <style>
+    /* ==========================================================================
+       CSS STYLING - MODERN, ACCESSIBLE, RESPONSIVE, ZERO EXTERNAL DEPENDENCIES
+       ========================================================================== */
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #059669;
+      --accent-light: #d1fae5;
+      --warning: #d97706;
+      --warning-light: #fef3c7;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --neutral-50: #f8fafc;
+      --neutral-100: #f1f5f9;
+      --neutral-200: #e2e8f0;
+      --neutral-300: #cbd5e1;
+      --neutral-600: #475569;
+      --neutral-700: #334155;
+      --neutral-800: #1e293b;
+      --neutral-900: #0f172a;
+      --surface: #ffffff;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--neutral-50);
+      color: var(--neutral-800);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Accessibility focus */
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Header & Top Bar */
+    .topbar {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--neutral-200);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--neutral-900);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      color: white;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .brand-text h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-meta {
+      font-size: 0.75rem;
+      color: var(--neutral-600);
+    }
+
+    /* Navigation Menu */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      max-width: 65%;
+      padding-bottom: 2px;
+    }
+
+    .nav-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--neutral-600);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .nav-btn:hover {
+      background-color: var(--neutral-100);
+      color: var(--neutral-900);
+    }
+
+    .nav-btn.active {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    .top-stats {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .stat-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--neutral-100);
+      border: 1px solid var(--neutral-200);
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      color: var(--neutral-700);
+    }
+
+    .sound-toggle {
+      background: var(--neutral-100);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-sm);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--neutral-700);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem 1rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* Screen Sections */
+    .screen {
+      display: none;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero / Card Component */
+    .hero-box {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-box h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+
+    .hero-box p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 720px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-chip {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    /* Card Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      border-color: var(--neutral-300);
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--neutral-900);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--neutral-600);
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: var(--neutral-100);
+      color: var(--neutral-800);
+      border-color: var(--neutral-200);
+    }
+
+    .btn-secondary:hover {
+      background: var(--neutral-200);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background: #047857;
+    }
+
+    .btn-sm {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    /* Sub Tabs within screen */
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--neutral-200);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .subtab-btn {
+      background: transparent;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--neutral-600);
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .subtab-btn.active {
+      background: var(--neutral-200);
+      color: var(--neutral-900);
+    }
+
+    /* Interactive Component: Anatomy of Procedure */
+    .procedure-sample {
+      background: var(--surface);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      font-family: inherit;
+    }
+
+    .highlightable {
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .highlight-goal {
+      background: #e0f2fe;
+      border-bottom: 2px solid #0284c7;
+    }
+
+    .highlight-mat {
+      background: #fef3c7;
+      border-bottom: 2px solid #d97706;
+    }
+
+    .highlight-step {
+      background: #d1fae5;
+      border-bottom: 2px solid #059669;
+    }
+
+    .highlight-imp {
+      background: #fee2e2;
+      border-bottom: 2px solid #dc2626;
+      font-weight: 600;
+    }
+
+    .highlight-seq {
+      background: #f3e8ff;
+      border-bottom: 2px solid #9333ea;
+      font-weight: 600;
+    }
+
+    .anatomy-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--neutral-200);
+      font-size: 0.8rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+    }
+
+    .legend-box {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+    }
+
+    /* Interactive Simulator: Decision Tree / Branching */
+    .simulator-container {
+      background: var(--surface);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+
+    .sim-stage-indicator {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    .sim-device-visual {
+      background: var(--neutral-100);
+      border: 2px dashed var(--neutral-300);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .sim-device-visual.danger {
+      background: var(--danger-light);
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .sim-device-visual.success {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: #065f46;
+    }
+
+    .sim-device-visual.warning {
+      background: var(--warning-light);
+      border-color: var(--warning);
+      color: #92400e;
+    }
+
+    .sim-options {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sim-option-btn {
+      text-align: left;
+      background: var(--surface);
+      border: 1px solid var(--neutral-300);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sim-option-btn:hover {
+      border-color: var(--primary);
+      background: var(--neutral-50);
+      transform: translateX(4px);
+    }
+
+    .sim-feedback {
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .sim-feedback.show {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+
+    /* Drag and Drop / Sequence Builder */
+    .sequence-pool, .sequence-target {
+      min-height: 80px;
+      background: var(--neutral-100);
+      border: 2px dashed var(--neutral-300);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .seq-item {
+      background: var(--surface);
+      border: 1px solid var(--neutral-300);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: grab;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      transition: var(--transition);
+    }
+
+    .seq-item:hover {
+      box-shadow: var(--shadow-sm);
+      border-color: var(--primary);
+    }
+
+    .seq-item.correct {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .seq-item.incorrect {
+      border-color: var(--danger);
+      background: var(--danger-light);
+    }
+
+    .seq-handle {
+      color: var(--neutral-400);
+      font-size: 0.8rem;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--neutral-200);
+      color: var(--neutral-700);
+      font-size: 0.75rem;
+      font-weight: 700;
+      shrink-0: 0;
+    }
+
+    /* Quiz Component */
+    .quiz-card {
+      background: var(--surface);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-qnum {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--neutral-500);
+    }
+
+    .quiz-question {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--neutral-900);
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .quiz-option {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.15rem;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    .quiz-option:hover:not(:disabled) {
+      background: var(--neutral-100);
+      border-color: var(--neutral-300);
+    }
+
+    .quiz-option.selected-correct {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: #065f46;
+      font-weight: 600;
+    }
+
+    .quiz-option.selected-wrong {
+      background: var(--danger-light);
+      border-color: var(--danger);
+      color: #991b1b;
+      font-weight: 600;
+    }
+
+    .quiz-explanation {
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .quiz-explanation.show {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+
+    /* Reflection Screen */
+    .reflection-form {
+      background: var(--surface);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--neutral-800);
+    }
+
+    .form-help {
+      font-size: 0.8rem;
+      color: var(--neutral-500);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--neutral-300);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .star-rating {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 1.75rem;
+      cursor: pointer;
+    }
+
+    .star {
+      color: var(--neutral-300);
+      transition: color 0.15s;
+    }
+
+    .star.active {
+      color: #f59e0b;
+    }
+
+    /* Certificate / Summary Modal */
+    .certificate-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      border: 2px solid var(--neutral-300);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+      margin-top: 2rem;
+      display: none;
+    }
+
+    .certificate-card.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .cert-seal {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1rem auto;
+      background: #0284c7;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem 1rem;
+      }
+      .nav-links {
+        max-width: 100%;
+      }
+      .hero-box {
+        padding: 1.5rem 1.25rem;
+      }
+      .hero-box h2 {
+        font-size: 1.45rem;
+      }
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .topbar, .nav-links, .btn, .subtab-btn {
+        display: none !important;
+      }
+      body {
+        background: white;
+      }
+      .certificate-card {
+        border: 2px solid #000;
+        box-shadow: none;
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP BAR NAVIGATION (User Control & 4 Core MPI Pillars)
+       ========================================================================= -->
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-icon">P</div>
+      <div class="brand-text">
+        <h1>ProcedureCraft</h1>
+        <div class="brand-meta">English XI · Deep Learning & TPACK Media</div>
+      </div>
+    </div>
+
+    <!-- Non-Linear Learning Pathway Selector -->
+    <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+      <button class="nav-btn active" onclick="navigateTo('screen-home')">
+        <span>01</span> Mission Hub
+      </button>
+      <button class="nav-btn" onclick="navigateTo('screen-concept')">
+        <span>02</span> Concept Lab
+      </button>
+      <button class="nav-btn" onclick="navigateTo('screen-branching')">
+        <span>03</span> What-If Simulator
+      </button>
+      <button class="nav-btn" onclick="navigateTo('screen-builder')">
+        <span>04</span> Sequence Challenge
+      </button>
+      <button class="nav-btn" onclick="navigateTo('screen-quiz')">
+        <span>05</span> Adaptive Quiz
+      </button>
+      <button class="nav-btn" onclick="navigateTo('screen-reflect')">
+        <span>06</span> Reflection & Cert
+      </button>
+    </nav>
+
+    <!-- Real-Time Metrics & Sound -->
+    <div class="top-stats">
+      <div class="stat-badge" title="Mastery Score">
+        <span>XP:</span>
+        <span id="scoreDisplay" style="font-weight: 700; color: var(--primary-dark);">0</span>
+      </div>
+      <button class="sound-toggle" id="soundBtn" onclick="toggleAudio()" title="Toggle Audio Feedback" aria-label="Toggle Sound">
+        🔊
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN INTERACTIVE WORKSPACE
+       ========================================================================= -->
+  <main class="container">
+
+    <!-- -----------------------------------------------------------------------
+         SCREEN 1: MISSION HUB (Berkesadaran / Orientation & ABCD Objectives)
+         ----------------------------------------------------------------------- -->
+    <section id="screen-home" class="screen active">
+      <div class="hero-box">
+        <h2>Mastering Procedure Texts: Step-by-Step Mastery</h2>
+        <p>
+          Welcome to ProcedureCraft! Life is full of critical processes—from brewing gourmet coffee and assembling gadgets to operating emergency medical gear. Explore social functions, generic structures, and precision imperative commands.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-chip">🎯 Deep Learning: Berkesadaran</span>
+          <span class="hero-chip">⚙️ TPACK: Advancing Tier</span>
+          <span class="hero-chip">⏱️ Duration: 2 × 45 Mins</span>
+          <span class="hero-chip">🧩 Grade: XI SMA/SMK</span>
+        </div>
+      </div>
+
+      <!-- Explicit ABCD Learning Objectives -->
+      <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+        <div class="card-title">
+          <span>🎯</span> Explicit ABCD Learning Objectives
+        </div>
+        <p class="card-desc" style="margin-bottom: 0.5rem;">
+          By navigating this interactive media, you will achieve the following targeted competencies:
+        </p>
+        <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--neutral-700); line-height: 1.7;">
+          <li><strong>Audience:</strong> 11th-grade students (Peserta Didik Kelas XI)</li>
+          <li><strong>Behavior:</strong> Analyze communicative purposes, evaluate missing/reversed chronological steps in branching scenarios, and reconstruct authentic procedures.</li>
+          <li><strong>Condition:</strong> Given self-paced interactive branching simulations and drag-and-drop sequencing challenges on ProcedureCraft.</li>
+          <li><strong>Degree:</strong> Achieving at least 80% accuracy in linguistic classification (imperatives, connectives, action verbs) and successfully resolving the tech rescue branching challenge.</li>
+        </ul>
+      </div>
+
+      <!-- Non-Linear Path Selection (Branching of Interest) -->
+      <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--neutral-900);">
+        Choose Your Starting Expedition:
+      </h3>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-title">📖 Concept Exploration</div>
+          <p class="card-desc">
+            Deep dive into Social Function, Generic Structure (Goal-Material-Steps), and Linguistic Features with interactive highlightable samples.
+          </p>
+          <button class="btn btn-primary" onclick="navigateTo('screen-concept')">
+            Launch Concept Lab →
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="card-title">⚡ "What-If" Crisis Simulator</div>
+          <p class="card-desc">
+            What happens if you skip a crucial step or mess up the order? Test your decision-making in the Water-Damaged Smartphone Rescue.
+          </p>
+          <button class="btn btn-accent" onclick="navigateTo('screen-branching')">
+            Enter Simulator →
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="card-title">🧪 Sequence Arena</div>
+          <p class="card-desc">
+            Hands-on challenge: Arrange scrambled procedure steps in authentic chronological order with real-time grammar checks.
+          </p>
+          <button class="btn btn-secondary" onclick="navigateTo('screen-builder')">
+            Play Challenge →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SCREEN 2: CONCEPT LAB (Memahami / Core Multimedia & Signaling)
+         ----------------------------------------------------------------------- -->
+    <section id="screen-concept" class="screen">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--neutral-900);">
+          Concept Laboratory: Anatomy of Procedure Text
+        </h2>
+        <p style="color: var(--neutral-600); font-size: 0.95rem;">
+          Mayer's Signaling & Segmenting Principle: Toggle tabs below to explore each structural pillar. Click highlighted keywords to reveal linguistic secrets!
+        </p>
+      </div>
+
+      <!-- Sub Tabs -->
+      <div class="tab-bar">
+        <button class="subtab-btn active" onclick="switchConceptTab('tab-function')">1. Social Function</button>
+        <button class="subtab-btn" onclick="switchConceptTab('tab-structure')">2. Generic Structure</button>
+        <button class="subtab-btn" onclick="switchConceptTab('tab-language')">3. Language Features</button>
+        <button class="subtab-btn" onclick="switchConceptTab('tab-types')">4. Four Major Types</button>
+      </div>
+
+      <!-- Tab 1: Social Function -->
+      <div id="tab-function" class="concept-tab-content">
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">🌟 Communicative Purpose (Social Function)</h3>
+            <p class="card-desc">
+              The primary purpose of a Procedure Text is <strong>to describe how something is accomplished or completed through a sequence of actions or steps</strong>.
+            </p>
+            <div style="background: var(--neutral-100); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; margin-bottom: 1rem;">
+              <strong>Key Contexts in Daily Life:</strong>
+              <ul style="padding-left: 1.25rem; margin-top: 0.5rem; line-height: 1.6;">
+                <li>Helping users operate electronic gadgets safely without damage.</li>
+                <li>Guiding cooks to produce consistent culinary flavor and food safety.</li>
+                <li>Preventing accidents during laboratory experiments or emergency drills.</li>
+                <li>Standardizing professional workflows (e.g., flight checklists, medical CPR).</li>
+              </ul>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--primary-dark); font-weight: 600;">
+              💡 Deep Learning Insight: A procedure text is not just words—it is a safety shield and an empowering roadmap for human action.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">🎯 Target Audience & Tone</h3>
+            <p class="card-desc">
+              A high-quality procedure text must be calibrated to its audience's prior knowledge and emotional state:
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem;">
+              <div style="border: 1px solid var(--neutral-200); padding: 0.75rem; border-radius: var(--radius-sm);">
+                <strong>Clear & Concise (Direct Tone):</strong> Avoid poetic metaphors or storytelling. Users need fast, unambiguous instructions.
+              </div>
+              <div style="border: 1px solid var(--neutral-200); padding: 0.75rem; border-radius: var(--radius-sm);">
+                <strong>Chronological Logic:</strong> Steps must follow temporal order. Step 3 cannot be executed before Step 1 without catastrophic failure.
+              </div>
+              <div style="border: 1px solid var(--neutral-200); padding: 0.75rem; border-radius: var(--radius-sm);">
+                <strong>Action-Oriented:</strong> Employs clear commands starting with bare infinitives (imperative verbs).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Generic Structure -->
+      <div id="tab-structure" class="concept-tab-content" style="display: none;">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3 class="card-title">Interactive Text Dissector: Traditional Indonesian Wedang Jahe</h3>
+          <p class="card-desc">
+            Click on any highlighted segment below to inspect its pedagogical role in the text hierarchy!
+          </p>
+
+          <div class="procedure-sample" id="textDissector">
+            <div style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem;">
+              <span class="highlightable highlight-goal" onclick="explainSegment('Goal / Aim', 'States what will be made or accomplished. Often indicated directly in the title.')">How to Brew Traditional Indonesian Herbal Ginger Drink (Wedang Jahe)</span>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <div style="font-weight: 700; font-size: 0.9rem; color: var(--neutral-700); margin-bottom: 0.35rem;">
+                <span class="highlightable highlight-mat" onclick="explainSegment('Materials / Ingredients', 'Lists the necessary items, ingredients, or equipment needed along with precise measurements.')">Ingredients & Utensils:</span>
+              </div>
+              <ul style="padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.6;">
+                <li><span class="highlightable highlight-mat" onclick="explainSegment('Ingredient Item', '100g fresh red ginger, bruised')">100 grams of fresh ginger root (crushed/bruised)</span></li>
+                <li><span class="highlightable highlight-mat" onclick="explainSegment('Ingredient Item', 'Palm sugar / brown sugar')">40 grams of organic palm sugar (gula aren)</span></li>
+                <li><span class="highlightable highlight-mat" onclick="explainSegment('Ingredient Item', 'Spices for fragrance')">1 stalk of lemongrass (crushed) and 1 cinnamon stick</span></li>
+                <li><span class="highlightable highlight-mat" onclick="explainSegment('Liquid Base', 'Water measurement')">500 ml of filtered water</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem; color: var(--neutral-700); margin-bottom: 0.35rem;">
+                <span class="highlightable highlight-step" onclick="explainSegment('Steps / Method', 'The sequence of instructions arranged in logical temporal order to reach the stated goal.')">Step-by-Step Instructions:</span>
+              </div>
+              <ol style="padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.8;">
+                <li>
+                  <span class="highlightable highlight-seq" onclick="explainSegment('Temporal Sequencer', 'Marks the beginning of the process.')">First</span>, 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Command word starting with base verb.')">wash</span> the ginger thoroughly and 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Direct action.')">roast</span> it briefly over an open flame to release its aromatic oils.
+                </li>
+                <li>
+                  <span class="highlightable highlight-seq" onclick="explainSegment('Temporal Sequencer', 'Indicates step 2.')">Next</span>, 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Command.')">crush</span> the roasted ginger and lemongrass with a pestle.
+                </li>
+                <li>
+                  <span class="highlightable highlight-seq" onclick="explainSegment('Temporal Sequencer', 'Middle stage connector.')">Then</span>, 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Action verb.')">pour</span> the 500 ml of water into a small pot and 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Action verb.')">bring</span> it to a gentle boil.
+                </li>
+                <li>
+                  <span class="highlightable highlight-seq" onclick="explainSegment('Temporal Sequencer', 'Sequential connector.')">After that</span>, 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Action verb.')">add</span> the crushed ginger, lemongrass, cinnamon, and palm sugar into the boiling water. 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Action verb.')">Simmer</span> for 10 minutes over low heat.
+                </li>
+                <li>
+                  <span class="highlightable highlight-seq" onclick="explainSegment('Temporal Sequencer', 'Concluding marker.')">Finally</span>, 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Final step action.')">strain</span> the warm herbal mixture into a glass and 
+                  <span class="highlightable highlight-imp" onclick="explainSegment('Imperative Verb', 'Serving suggestion.')">serve</span> immediately.
+                </li>
+              </ol>
+            </div>
+
+            <!-- Live Explanation Panel -->
+            <div id="segmentExplanation" style="margin-top: 1.25rem; padding: 0.85rem 1rem; background: var(--neutral-100); border-radius: var(--radius-sm); border: 1px solid var(--neutral-300); font-size: 0.88rem; display: none;">
+              <strong id="segmentTitle" style="color: var(--primary-dark);">Component Title</strong>: 
+              <span id="segmentBody">Click any highlighted part above to see details.</span>
+            </div>
+
+            <div class="anatomy-legend">
+              <div class="legend-item"><div class="legend-box" style="background: #e0f2fe; border: 1px solid #0284c7;"></div> Goal / Aim</div>
+              <div class="legend-item"><div class="legend-box" style="background: #fef3c7; border: 1px solid #d97706;"></div> Materials / Ingredients</div>
+              <div class="legend-item"><div class="legend-box" style="background: #d1fae5; border: 1px solid #059669;"></div> Steps / Method</div>
+              <div class="legend-item"><div class="legend-box" style="background: #fee2e2; border: 1px solid #dc2626;"></div> Imperative Verbs</div>
+              <div class="legend-item"><div class="legend-box" style="background: #f3e8ff; border: 1px solid #9333ea;"></div> Temporal Sequencers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Language Features -->
+      <div id="tab-language" class="concept-tab-content" style="display: none;">
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">🔤 1. Imperative Sentences & Action Verbs</h3>
+            <p class="card-desc">
+              Procedure texts give instructions using commands. They omit the subject "You" and begin straight with a <strong>bare infinitive</strong> (V1).
+            </p>
+            <div style="background: var(--neutral-50); border: 1px solid var(--neutral-200); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem;">
+              <p>❌ <em>You should peel the potatoes carefully.</em> (Too descriptive/modal)</p>
+              <p style="color: var(--accent); font-weight: 600; margin-top: 0.25rem;">
+                ✅ <strong>Peel the potatoes carefully.</strong> (Direct Imperative Command)
+              </p>
+              <p style="margin-top: 0.5rem;">❌ <em>Don't to touch the hot wire.</em></p>
+              <p style="color: var(--accent); font-weight: 600; margin-top: 0.25rem;">
+                ✅ <strong>Do not touch the exposed wire.</strong> (Negative Imperative)
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">⏳ 2. Connectives & Temporal Conjunctions</h3>
+            <p class="card-desc">
+              Sequencing adverbs maintain chronological order so the reader never gets confused about what happens when.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.85rem;">
+              <div style="background: var(--neutral-100); padding: 0.5rem; border-radius: 4px;"><strong>Start:</strong> First, Initially, To begin with</div>
+              <div style="background: var(--neutral-100); padding: 0.5rem; border-radius: 4px;"><strong>Middle:</strong> Next, Then, After that, Subsequently</div>
+              <div style="background: var(--neutral-100); padding: 0.5rem; border-radius: 4px;"><strong>Simultaneous:</strong> Meanwhile, While, At the same time</div>
+              <div style="background: var(--neutral-100); padding: 0.5rem; border-radius: 4px;"><strong>End:</strong> Finally, Lastly, In the end</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">📍 3. Adverbial Phrases of Manner, Time, & Place</h3>
+            <p class="card-desc">
+              Provide specific detail on HOW, FOR HOW LONG, or WHERE to execute an action.
+            </p>
+            <ul style="font-size: 0.85rem; padding-left: 1.25rem; line-height: 1.6;">
+              <li><strong>Manner:</strong> <em>Whisk the eggs <u>vigorously</u></em>.</li>
+              <li><strong>Time:</strong> <em>Bake the dough <u>for 25 minutes at 180°C</u></em>.</li>
+              <li><strong>Place:</strong> <em>Insert the SIM card <u>into tray slot 1</u></em>.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">⚡ 4. Simple Present Tense & Action Verbs</h3>
+            <p class="card-desc">
+              Always written in general factual present tense. Focuses on generalized human agents rather than a specific narrator's past experience.
+            </p>
+            <div style="background: var(--primary-light); color: var(--primary-dark); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500;">
+              Key Action Verbs: <em>Mix, tighten, slice, reboot, adjust, configure, dilute, secure, verify.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: 4 Types -->
+      <div id="tab-types" class="concept-tab-content" style="display: none;">
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">🍲 1. Culinary Recipes (Resep)</h3>
+            <p class="card-desc">
+              Details how to prepare edible dishes or drinks. Focuses on ingredients, exact measurements (grams, teaspoons), cooking temperature, and duration.
+            </p>
+            <div style="font-size: 0.8rem; background: var(--neutral-100); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <em>Example: How to Cook Authentic Rendang Daging Sapi</em>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">📱 2. User Manuals (Buku Petunjuk Alat)</h3>
+            <p class="card-desc">
+              Explains how to operate, assemble, or maintain mechanical, electronic, or digital devices safely. Heavy focus on parts and safety warnings.
+            </p>
+            <div style="font-size: 0.8rem; background: var(--neutral-100); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <em>Example: How to Pair Bluetooth Earbuds with a Laptop</em>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">💡 3. Tips & Life Hacks (Kiat Sukses)</h3>
+            <p class="card-desc">
+              Offers practical behavioral advice or strategies to improve habits, productivity, study routines, or personal safety.
+            </p>
+            <div style="font-size: 0.8rem; background: var(--neutral-100); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <em>Example: 5 Smart Tips to Protect Your Social Media from Hackers</em>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">🛡️ 4. Protocols & Safety Rules (SOP / Regulasi)</h3>
+            <p class="card-desc">
+              Standard Operating Procedures (SOP) or mandatory public conduct guides designed to maintain order, health, and disaster preparedness.
+            </p>
+            <div style="font-size: 0.8rem; background: var(--neutral-100); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <em>Example: Safety Protocol: What to Do During an Earthquake in a High-Rise School</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SCREEN 3: WHAT-IF BRANCHING SIMULATOR (Mengaplikasi / Real Consequences)
+         ----------------------------------------------------------------------- -->
+    <section id="screen-branching" class="screen">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--neutral-900);">
+          "What-If" Crisis Simulator: The Waterlogged Smartphone Rescue
+        </h2>
+        <p style="color: var(--neutral-600); font-size: 0.95rem;">
+          In real life, procedure texts prevent disasters. Your phone just dropped into clean freshwater! Every decision you make will determine whether the phone survives or gets permanently fried.
+        </p>
+      </div>
+
+      <div class="simulator-container">
+        <div class="sim-header">
+          <div>
+            <strong id="simScenarioTitle">Scenario 1: Initial Impact</strong>
+            <div style="font-size: 0.8rem; color: var(--neutral-600);">Phone is soaking wet. Screen is still flickering.</div>
+          </div>
+          <span class="sim-stage-indicator" id="simStageText">Step 1 of 3</span>
+        </div>
+
+        <div class="sim-device-visual" id="simVisual">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;" id="simEmoji">📱💦</div>
+          <h4 id="simStatusHeading" style="font-weight: 700; font-size: 1.1rem;">Phone is submerged in water!</h4>
+          <p id="simStatusDesc" style="font-size: 0.85rem; max-width: 500px; margin-top: 0.25rem;">
+            Water has seeped into the charging port and speaker grill. What is your immediate procedural action?
+          </p>
+        </div>
+
+        <!-- Options Container -->
+        <div class="sim-options" id="simOptionsContainer">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Pedagogical Feedback Box -->
+        <div class="sim-feedback" id="simFeedbackBox"></div>
+
+        <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+          <button class="btn btn-secondary btn-sm" onclick="restartSimulator()">
+            🔄 Reset Scenario
+          </button>
+          <button class="btn btn-primary btn-sm" id="simNextBtn" style="display: none;" onclick="advanceSimulator()">
+            Next Step →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SCREEN 4: SEQUENCE CHALLENGE (Mengaplikasi / Drag & Reorder)
+         ----------------------------------------------------------------------- -->
+    <section id="screen-builder" class="screen">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--neutral-900);">
+          Chronological Sequence Arena
+        </h2>
+        <p style="color: var(--neutral-600); font-size: 0.95rem;">
+          A key skill in procedure texts is maintaining logical order. Click the buttons or arrows to arrange these scrambled steps into the correct sequence for: 
+          <strong>"How to Safely Replace a Flat Tire on the Roadside"</strong>.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h3 class="card-title" style="margin-bottom: 0;">🔧 Reorder the Steps:</h3>
+          <span style="font-size: 0.8rem; color: var(--neutral-600);">Click ⬆️ / ⬇️ to swap position</span>
+        </div>
+
+        <div id="stepListContainer" style="display: flex; flex-direction: column; gap: 0.6rem;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <button class="btn btn-accent" onclick="checkSequenceOrder()">
+            ✅ Verify Chronological Order
+          </button>
+          <button class="btn btn-secondary" onclick="resetSequenceOrder()">
+            🔀 Scramble Again
+          </button>
+          <div id="sequenceFeedback" style="font-size: 0.9rem; font-weight: 600;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SCREEN 5: ADAPTIVE MASTERY QUIZ (Asesmen Formatif Berbasis Analitik)
+         ----------------------------------------------------------------------- -->
+    <section id="screen-quiz" class="screen">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--neutral-900);">
+          Adaptive Mastery Assessment
+        </h2>
+        <p style="color: var(--neutral-600); font-size: 0.95rem;">
+          5 high-order diagnostic questions evaluating Social Function, Generic Structure, and Imperative Grammar. Direct pedagogical feedback is generated immediately upon answering.
+        </p>
+      </div>
+
+      <div id="quizContainer">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="card" id="quizSummaryCard" style="display: none; text-align: center; margin-top: 1.5rem;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎉</div>
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--neutral-900);">Quiz Completed!</h3>
+        <p style="font-size: 1rem; color: var(--neutral-600); margin-bottom: 1rem;">
+          Your Score: <strong id="finalQuizScore" style="color: var(--primary); font-size: 1.4rem;">0 / 5</strong>
+        </p>
+        <div id="analyticsFeedback" style="font-size: 0.9rem; margin-bottom: 1.25rem; text-align: left; background: var(--neutral-100); padding: 1rem; border-radius: var(--radius-sm);">
+          <!-- Detailed diagnostic breakdown -->
+        </div>
+        <button class="btn btn-primary" onclick="navigateTo('screen-reflect')">
+          Proceed to Digital Reflection & Certification →
+        </button>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SCREEN 6: REFLECTION & DIGITAL CERTIFICATE (Merefleksi / Deep Learning)
+         ----------------------------------------------------------------------- -->
+    <section id="screen-reflect" class="screen">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--neutral-900);">
+          Reflective Synthesis & Procedural Badge
+        </h2>
+        <p style="color: var(--neutral-600); font-size: 0.95rem;">
+          Deep Learning (Tahap Merefleksi): Consolidate what you have discovered today, self-assess your confidence, and generate your official Certificate of Completion.
+        </p>
+      </div>
+
+      <div class="reflection-form" id="reflectionFormWrapper">
+        <div class="form-group">
+          <label class="form-label" for="studentName">Student Full Name:</label>
+          <input type="text" id="studentName" class="form-input" placeholder="e.g. Raden Ayu / Ahmad Pratama" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="studentClass">Class & School:</label>
+          <input type="text" id="studentClass" class="form-input" placeholder="e.g. XI MIPA 1 / SMA Negeri 1" value="XI - Senior High School" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Self-Assessed Confidence with Imperatives & Sequencers:</label>
+          <div class="form-help">Click stars to rate your understanding (1 = Needs Practice, 5 = Mastered):</div>
+          <div class="star-rating" id="starContainer">
+            <span class="star active" onclick="setRating(1)">★</span>
+            <span class="star active" onclick="setRating(2)">★</span>
+            <span class="star active" onclick="setRating(3)">★</span>
+            <span class="star active" onclick="setRating(4)">★</span>
+            <span class="star" onclick="setRating(5)">★</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="keyTakeaway">Key Metacognitive Takeaway (Mindful Learning):</label>
+          <div class="form-help">Why is strict chronological order and precise action verbs critical when creating user instructions?</div>
+          <textarea id="keyTakeaway" class="form-textarea" rows="3" placeholder="I learned that swapping steps in procedure text can cause disastrous results like frying phone circuits..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="realLifeApplication">Real-World Application (Bermakna):</label>
+          <div class="form-help">In what daily situation will you write or follow a clear procedure text next week?</div>
+          <input type="text" id="realLifeApplication" class="form-input" placeholder="e.g. Creating a clear guide for my school club's Instagram live stream setup" />
+        </div>
+
+        <button class="btn btn-primary" onclick="generateCertificate()">
+          🎓 Submit Reflection & Issue Badge
+        </button>
+      </div>
+
+      <!-- Generated Certificate -->
+      <div class="certificate-card" id="certificateCard">
+        <div class="cert-seal">🏆</div>
+        <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--neutral-600); font-weight: 700;">
+          Certificate of Procedural Competence
+        </div>
+        <h3 id="certStudentName" style="font-size: 1.8rem; font-weight: 800; color: var(--neutral-900); margin: 0.5rem 0;">
+          Student Name
+        </h3>
+        <p style="font-size: 0.95rem; color: var(--neutral-700); max-width: 600px; margin: 0 auto 1.25rem auto;">
+          has successfully completed the interactive learning module for <strong>English Grade XI: Procedure Texts</strong>, demonstrating proficiency in Social Functions, Generic Structures (Goal-Material-Step), and Imperative Grammar in accordance with the <strong>TPACK & Deep Learning Framework</strong>.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 2rem; border-top: 1px solid var(--neutral-300); border-bottom: 1px solid var(--neutral-300); padding: 1rem 0; margin-bottom: 1.5rem; font-size: 0.9rem;">
+          <div>
+            <div style="color: var(--neutral-500); font-size: 0.75rem;">DATE ISSUED</div>
+            <strong id="certDate">October 16, 2026</strong>
+          </div>
+          <div>
+            <div style="color: var(--neutral-500); font-size: 0.75rem;">XP POINTS</div>
+            <strong id="certScore">150 XP</strong>
+          </div>
+          <div>
+            <div style="color: var(--neutral-500); font-size: 0.75rem;">TPACK LEVEL</div>
+            <strong style="color: var(--accent);">Advancing (Tier 5)</strong>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 1rem;">
+          <button class="btn btn-secondary" onclick="window.print()">
+            🖨️ Print / Save as PDF
+          </button>
+          <button class="btn btn-primary" onclick="restartWholeApp()">
+            🔄 Explore Again
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       VANILLA JAVASCRIPT LOGIC - SELF-CONTAINED, HIGH PERFORMANCE
+       ========================================================================= -->
+  <script>
+    /* -------------------------------------------------------------------------
+       1. GLOBAL STATE & SOUND SYNTHESIZER (Web Audio API)
+       ------------------------------------------------------------------------- */
+    const state = {
+      score: 0,
+      soundEnabled: true,
+      currentRating: 4,
+      simStep: 0,
+      quizAnswers: {},
+      quizScore: 0
+    };
+
+    // Synthesized Sound FX using Web Audio API (Zero external assets)
+    let audioCtx = null;
+    function playBeep(freq = 440, type = 'sine', duration = 0.12) {
+      if (!state.soundEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        console.warn('Audio not allowed yet:', e);
+      }
+    }
+
+    function soundSuccess() {
+      playBeep(523.25, 'sine', 0.1); // C5
+      setTimeout(() => playBeep(659.25, 'sine', 0.15), 100); // E5
+      setTimeout(() => playBeep(783.99, 'sine', 0.2), 200); // G5
+    }
+
+    function soundError() {
+      playBeep(220, 'sawtooth', 0.15);
+      setTimeout(() => playBeep(180, 'sawtooth', 0.2), 120);
+    }
+
+    function toggleAudio() {
+      state.soundEnabled = !state.soundEnabled;
+      document.getElementById('soundBtn').textContent = state.soundEnabled ? '🔊' : '🔇';
+    }
+
+    function addScore(points) {
+      state.score += points;
+      document.getElementById('scoreDisplay').textContent = state.score;
+      playBeep(880, 'triangle', 0.08);
+    }
+
+    /* -------------------------------------------------------------------------
+       2. NON-LINEAR NAVIGATION CONTROLLER
+       ------------------------------------------------------------------------- */
+    function navigateTo(screenId) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      const target = document.getElementById(screenId);
+      if (target) target.classList.add('active');
+
+      // Update Nav Buttons
+      document.querySelectorAll('#mainNav .nav-btn').forEach(btn => {
+        const onclickAttr = btn.getAttribute('onclick') || '';
+        if (onclickAttr.includes(screenId)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* -------------------------------------------------------------------------
+       3. CONCEPT LAB TAB SWITCHER & SEGMENT EXPLAINER
+       ------------------------------------------------------------------------- */
+    function switchConceptTab(tabId) {
+      document.querySelectorAll('.concept-tab-content').forEach(c => c.style.display = 'none');
+      document.querySelectorAll('.subtab-btn').forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.style.display = 'block';
+
+      event.target.classList.add('active');
+      playBeep(587, 'sine', 0.05);
+    }
+
+    function explainSegment(title, desc) {
+      const box = document.getElementById('segmentExplanation');
+      const titleEl = document.getElementById('segmentTitle');
+      const bodyEl = document.getElementById('segmentBody');
+
+      titleEl.textContent = title;
+      bodyEl.textContent = desc;
+      box.style.display = 'block';
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      playBeep(659, 'sine', 0.08);
+      addScore(5);
+    }
+
+    /* -------------------------------------------------------------------------
+       4. BRANCHING SIMULATOR LOGIC ("What-If" Crisis Lab)
+       ------------------------------------------------------------------------- */
+    const simStages = [
+      {
+        title: "Stage 1: Immediate First Response",
+        status: "Phone just dropped in water and is currently dripping!",
+        emoji: "📱💦",
+        type: "danger",
+        options: [
+          {
+            text: "Turn on the phone immediately to check if photos are safe",
+            outcome: "disaster",
+            feedback: "❌ DISASTER! Electric current flowing through water caused a catastrophic short-circuit! The motherboard is burned beyond repair.",
+            action: "Short Circuit",
+            penalty: 0
+          },
+          {
+            text: "Power off the device completely and remove case/SIM tray immediately",
+            outcome: "success",
+            feedback: "✅ EXCELLENT! Eliminating electrical current is the Golden Rule of water damage procedures.",
+            action: "Safe Isolation",
+            points: 25
+          },
+          {
+            text: "Shake the phone vigorously to sling the water droplets out",
+            outcome: "warning",
+            feedback: "⚠️ BAD IDEA! Shaking violently forces water deeper into the microchip cavities.",
+            action: "Water Spread",
+            penalty: 5
+          }
+        ]
+      },
+      {
+        title: "Stage 2: Drying Mechanism",
+        status: "Phone is powered off. Exterior is wiped with a clean towel.",
+        emoji: "💨🔥",
+        type: "warning",
+        options: [
+          {
+            text: "Blast the charging port with a high-heat hair dryer",
+            outcome: "disaster",
+            feedback: "❌ CATASTROPHE! Intense hot air melted the delicate rubber water seals and warped the OLED screen adhesives.",
+            action: "Heat Damage",
+            penalty: 0
+          },
+          {
+            text: "Submerge the phone in silica gel packets or place in front of a cool air fan for 48 hours",
+            outcome: "success",
+            feedback: "✅ BRILLIANT! Desiccants and gentle cool air circulation safely evaporate moisture without heat degradation.",
+            action: "Desiccant Evaporation",
+            points: 25
+          },
+          {
+            text: "Bury the phone inside raw uncooked white rice",
+            outcome: "warning",
+            feedback: "⚠️ MEDIOCRE! Rice dust and starch clog headphone jacks and charging pins, while absorbing moisture too slowly.",
+            action: "Dust Contamination",
+            penalty: 5
+          }
+        ]
+      },
+      {
+        title: "Stage 3: Testing & Reboot",
+        status: "Phone has dried in silica gel for 48 uninterrupted hours.",
+        emoji: "🔋⚡",
+        type: "success",
+        options: [
+          {
+            text: "Plug into fast charger immediately while still cold",
+            outcome: "warning",
+            feedback: "⚠️ RISKY! Charging introduces high amperage. Always verify port cleanliness first.",
+            action: "Premature Charge",
+            penalty: 5
+          },
+          {
+            text: "Inspect charging port with flashlight, then power on using internal battery first",
+            outcome: "success",
+            feedback: "🎉 RESCUE COMPLETE! The phone booted up flawlessly! You saved your data by following precise procedural logic!",
+            action: "Mastery Rescue",
+            points: 30
+          }
+        ]
+      }
+    ];
+
+    function renderSimulatorStage() {
+      const stage = simStages[state.simStep];
+      document.getElementById('simStageText').textContent = `Step ${state.simStep + 1} of ${simStages.length}`;
+      document.getElementById('simScenarioTitle').textContent = stage.title;
+      document.getElementById('simStatusHeading').textContent = stage.status;
+      document.getElementById('simEmoji').textContent = stage.emoji;
+
+      const visual = document.getElementById('simVisual');
+      visual.className = 'sim-device-visual ' + stage.type;
+
+      const container = document.getElementById('simOptionsContainer');
+      container.innerHTML = '';
+
+      stage.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'sim-option-btn';
+        btn.innerHTML = `<span><strong>${String.fromCharCode(65 + idx)}.</strong> ${opt.text}</span> <span>➔</span>`;
+        btn.onclick = () => selectSimOption(opt);
+        container.appendChild(btn);
+      });
+
+      const feedbackBox = document.getElementById('simFeedbackBox');
+      feedbackBox.className = 'sim-feedback';
+      feedbackBox.style.display = 'none';
+      document.getElementById('simNextBtn').style.display = 'none';
+    }
+
+    function selectSimOption(opt) {
+      const feedbackBox = document.getElementById('simFeedbackBox');
+      feedbackBox.innerHTML = opt.feedback;
+      feedbackBox.className = 'sim-feedback show';
+
+      if (opt.outcome === 'success') {
+        feedbackBox.style.background = 'var(--accent-light)';
+        feedbackBox.style.color = '#065f46';
+        feedbackBox.style.border = '1px solid var(--accent)';
+        soundSuccess();
+        if (opt.points) addScore(opt.points);
+      } else if (opt.outcome === 'disaster') {
+        feedbackBox.style.background = 'var(--danger-light)';
+        feedbackBox.style.color = '#991b1b';
+        feedbackBox.style.border = '1px solid var(--danger)';
+        soundError();
+      } else {
+        feedbackBox.style.background = 'var(--warning-light)';
+        feedbackBox.style.color = '#92400e';
+        feedbackBox.style.border = '1px solid var(--warning)';
+        playBeep(330, 'triangle', 0.15);
+      }
+
+      // Disable buttons
+      document.querySelectorAll('.sim-option-btn').forEach(b => b.disabled = true);
+
+      // Show next button if not last
+      const nextBtn = document.getElementById('simNextBtn');
+      if (state.simStep < simStages.length - 1) {
+        nextBtn.style.display = 'inline-flex';
+      } else {
+        nextBtn.textContent = 'Explore Challenge Arena →';
+        nextBtn.style.display = 'inline-flex';
+        nextBtn.onclick = () => navigateTo('screen-builder');
+      }
+    }
+
+    function advanceSimulator() {
+      if (state.simStep < simStages.length - 1) {
+        state.simStep++;
+        renderSimulatorStage();
+      }
+    }
+
+    function restartSimulator() {
+      state.simStep = 0;
+      renderSimulatorStage();
+    }
+
+    /* -------------------------------------------------------------------------
+       5. SEQUENCE ARENA (Arranging Scrambled Steps)
+       ------------------------------------------------------------------------- */
+    const originalSteps = [
+      { id: 1, text: "Pull over to a flat, safe surface away from traffic and activate hazard lights." },
+      { id: 2, text: "Engage the parking brake firmly and place wheel chocks behind tires." },
+      { id: 3, text: "Loosen the lug nuts slightly with a lug wrench before lifting the car." },
+      { id: 4, text: "Position the jack beneath the vehicle's frame jack point and raise the car." },
+      { id: 5, text: "Remove the lug nuts, pull off the flat tire, and mount the spare tire." },
+      { id: 6, text: "Tighten the lug nuts by hand, lower the car, then fully tighten with wrench." }
+    ];
+
+    let currentOrder = [];
+
+    function initSequenceChallenge() {
+      // Scramble
+      currentOrder = [...originalSteps].sort(() => Math.random() - 0.5);
+      renderSequenceItems();
+    }
+
+    function renderSequenceItems() {
+      const container = document.getElementById('stepListContainer');
+      container.innerHTML = '';
+
+      currentOrder.forEach((step, idx) => {
+        const item = document.createElement('div');
+        item.className = 'seq-item';
+        item.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span class="step-badge">${idx + 1}</span>
+            <span>${step.text}</span>
+          </div>
+          <div style="display: flex; gap: 0.25rem;">
+            <button class="btn btn-secondary btn-sm" onclick="moveStep(${idx}, -1)" ${idx === 0 ? 'disabled' : ''}>▲</button>
+            <button class="btn btn-secondary btn-sm" onclick="moveStep(${idx}, 1)" ${idx === currentOrder.length - 1 ? 'disabled' : ''}>▼</button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function moveStep(idx, direction) {
+      const targetIdx = idx + direction;
+      if (targetIdx < 0 || targetIdx >= currentOrder.length) return;
+      const temp = currentOrder[idx];
+      currentOrder[idx] = currentOrder[targetIdx];
+      currentOrder[targetIdx] = temp;
+      renderSequenceItems();
+      playBeep(494, 'sine', 0.05);
+    }
+
+    function checkSequenceOrder() {
+      let correctCount = 0;
+      currentOrder.forEach((step, idx) => {
+        if (step.id === idx + 1) correctCount++;
+      });
+
+      const feedback = document.getElementById('sequenceFeedback');
+      if (correctCount === originalSteps.length) {
+        feedback.innerHTML = `<span style="color: var(--accent);">🎉 Flawless! All 6 steps are in perfect chronological sequence (+30 XP)</span>`;
+        soundSuccess();
+        addScore(30);
+      } else {
+        feedback.innerHTML = `<span style="color: var(--danger);">⚠️ ${correctCount} of 6 steps are currently in the right position. Try swapping!</span>`;
+        soundError();
+      }
+    }
+
+    function resetSequenceOrder() {
+      initSequenceChallenge();
+      document.getElementById('sequenceFeedback').textContent = '';
+    }
+
+    /* -------------------------------------------------------------------------
+       6. ADAPTIVE MASTERY QUIZ (Asesmen Formatif & Instant Feedback)
+       ------------------------------------------------------------------------- */
+    const quizQuestions = [
+      {
+        id: "q1",
+        competency: "Social Function",
+        question: "What is the primary communicative purpose of a user manual for a digital camera?",
+        options: [
+          { text: "To entertain readers with captivating stories about travel photography", correct: false, note: "Incorrect. That describes a narrative recount, not a procedure." },
+          { text: "To persuade consumers to purchase the highest priced zoom lenses", correct: false, note: "Incorrect. That is the function of persuasive advertisement." },
+          { text: "To instruct users on how to operate and configure the camera safely and correctly", correct: true, note: "Correct! User manuals provide clear sequential guidance to operate devices." },
+          { text: "To describe the historical evolution of optical glass manufacturing", correct: false, note: "Incorrect. That is an informational report." }
+        ]
+      },
+      {
+        id: "q2",
+        competency: "Generic Structure",
+        question: "Which component of a procedure text lists the necessary raw items and measurements required?",
+        options: [
+          { text: "Goal / Aim", correct: false, note: "Goal states the final outcome or objective." },
+          { text: "Materials / Ingredients", correct: true, note: "Spot on! Materials list required substances, tools, and quantities." },
+          { text: "Steps / Method", correct: false, note: "Steps describe the sequential actions." },
+          { text: "Reorientation", correct: false, note: "Reorientation belongs to recount/narrative structures." }
+        ]
+      },
+      {
+        id: "q3",
+        competency: "Language Features: Imperatives",
+        question: "Which of the following sentences correctly exemplifies an imperative command in a recipe?",
+        options: [
+          { text: "You might want to slice the red onions thinly.", correct: false, note: "Incorrect. 'You might want' is a modal suggestion, not an imperative." },
+          { text: "Thinly slice the red onions and sauté them in olive oil.", correct: true, note: "Correct! Starts directly with the action verb 'slice' in bare infinitive form." },
+          { text: "Sliced red onions are sizzling very nicely.", correct: false, note: "Incorrect. This is descriptive continuous present." },
+          { text: "The chef sliced the onions before opening the bistro.", correct: false, note: "Incorrect. This is past tense narrative." }
+        ]
+      },
+      {
+        id: "q4",
+        competency: "Language Features: Connectives",
+        question: "Which temporal sequencer is most appropriate to signal the concluding stage of a multi-step instruction?",
+        options: [
+          { text: "First of all", correct: false, note: "Marks the initial step." },
+          { text: "Meanwhile", correct: false, note: "Signals simultaneous secondary actions." },
+          { text: "Subsequently", correct: false, note: "Used for intermediate sequential transitions." },
+          { text: "Finally", correct: true, note: "Correct! 'Finally' or 'Lastly' establishes the terminal step in the procedure." }
+        ]
+      },
+      {
+        id: "q5",
+        competency: "HOTS / Critical Thinking",
+        question: "Why does reversing the order of steps in an emergency earthquake evacuation procedure cause dangerous consequences?",
+        options: [
+          { text: "Because English grammar prohibits writing adverbs at the end of sentences", correct: false, note: "Grammar is not the cause of real physical danger." },
+          { text: "Because procedure texts follow strict chronological dependencies where subsequent safety relies on preceding actions", correct: true, note: "Exactly! For example, running outside before ducking under a desk exposes you to falling glass and debris." },
+          { text: "Because recipes take longer to cook if steps are reversed", correct: false, note: "Irrelevant to safety protocol." },
+          { text: "Because the author will lose copyright ownership of the manual", correct: false, note: "Irrelevant." }
+        ]
+      }
+    ];
+
+    function renderQuiz() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+
+      quizQuestions.forEach((q, qIdx) => {
+        const card = document.createElement('div');
+        card.className = 'quiz-card';
+        card.id = `qCard_${qIdx}`;
+
+        card.innerHTML = `
+          <div class="quiz-header">
+            <span class="quiz-qnum">Question ${qIdx + 1} of ${quizQuestions.length} · ${q.competency}</span>
+          </div>
+          <div class="quiz-question">${q.question}</div>
+          <div class="quiz-options">
+            ${q.options.map((opt, optIdx) => `
+              <button class="quiz-option" id="opt_${qIdx}_${optIdx}" onclick="answerQuizQuestion(${qIdx}, ${optIdx})">
+                <span style="font-weight: 700; width: 20px;">${String.fromCharCode(65 + optIdx)}.</span>
+                <span>${opt.text}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="quiz-explanation" id="expl_${qIdx}"></div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function answerQuizQuestion(qIdx, optIdx) {
+      if (state.quizAnswers[qIdx] !== undefined) return; // Prevent double answer
+
+      const q = quizQuestions[qIdx];
+      const selected = q.options[optIdx];
+      state.quizAnswers[qIdx] = selected.correct;
+
+      const expl = document.getElementById(`expl_${qIdx}`);
+      const btn = document.getElementById(`opt_${qIdx}_${optIdx}`);
+
+      // Highlight options
+      q.options.forEach((opt, oIdx) => {
+        const oBtn = document.getElementById(`opt_${qIdx}_${oIdx}`);
+        oBtn.disabled = true;
+        if (opt.correct) {
+          oBtn.classList.add('selected-correct');
+        }
+      });
+
+      if (selected.correct) {
+        btn.classList.add('selected-correct');
+        expl.style.background = 'var(--accent-light)';
+        expl.style.color = '#065f46';
+        expl.style.border = '1px solid var(--accent)';
+        expl.innerHTML = `<strong>✅ Correct!</strong> ${selected.note}`;
+        soundSuccess();
+        addScore(20);
+        state.quizScore++;
+      } else {
+        btn.classList.add('selected-wrong');
+        expl.style.background = 'var(--danger-light)';
+        expl.style.color = '#991b1b';
+        expl.style.border = '1px solid var(--danger)';
+        expl.innerHTML = `<strong>❌ Not quite.</strong> ${selected.note}`;
+        soundError();
+      }
+
+      expl.classList.add('show');
+
+      // Check if all answered
+      if (Object.keys(state.quizAnswers).length === quizQuestions.length) {
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz() {
+      const card = document.getElementById('quizSummaryCard');
+      document.getElementById('finalQuizScore').textContent = `${state.quizScore} / ${quizQuestions.length}`;
+      
+      let breakdown = '<strong>Diagnostic Mastery Analysis:</strong><ul style="padding-left: 1.25rem; margin-top: 0.5rem;">';
+      quizQuestions.forEach((q, idx) => {
+        const ok = state.quizAnswers[idx];
+        breakdown += `<li>${q.competency}: ${ok ? '<span style="color:var(--accent);">Mastered (100%)</span>' : '<span style="color:var(--danger);">Review Recommended</span>'}</li>`;
+      });
+      breakdown += '</ul>';
+
+      document.getElementById('analyticsFeedback').innerHTML = breakdown;
+      card.style.display = 'block';
+      card.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* -------------------------------------------------------------------------
+       7. REFLECTION & DIGITAL CERTIFICATE
+       ------------------------------------------------------------------------- */
+    function setRating(val) {
+      state.currentRating = val;
+      const stars = document.querySelectorAll('#starContainer .star');
+      stars.forEach((s, idx) => {
+        if (idx < val) s.classList.add('active');
+        else s.classList.remove('active');
+      });
+      playBeep(659, 'sine', 0.08);
+    }
+
+    function generateCertificate() {
+      const nameInput = document.getElementById('studentName');
+      const name = nameInput.value.trim() || 'Distinguished Scholar';
+
+      document.getElementById('certStudentName').textContent = name;
+      document.getElementById('certScore').textContent = `${state.score} XP`;
+
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('certDate').textContent = today.toLocaleDateString('en-US', options);
+
+      document.getElementById('certificateCard').classList.add('show');
+      document.getElementById('certificateCard').scrollIntoView({ behavior: 'smooth' });
+      soundSuccess();
+      addScore(50);
+    }
+
+    function restartWholeApp() {
+      state.score = 0;
+      state.simStep = 0;
+      state.quizAnswers = {};
+      state.quizScore = 0;
+      document.getElementById('scoreDisplay').textContent = 0;
+      document.getElementById('certificateCard').classList.remove('show');
+      document.getElementById('quizSummaryCard').style.display = 'none';
+      renderSimulatorStage();
+      initSequenceChallenge();
+      renderQuiz();
+      navigateTo('screen-home');
+    }
+
+    /* -------------------------------------------------------------------------
+       INITIALIZATION
+       ------------------------------------------------------------------------- */
+    window.addEventListener('DOMContentLoaded', () => {
+      renderSimulatorStage();
+      initSequenceChallenge();
+      renderQuiz();
+    });
+  </script>
+</body>
+</html>
