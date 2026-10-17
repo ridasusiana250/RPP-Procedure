@@ -24,6 +24,9 @@ export const RPPView: React.FC = () => {
 
   const copyRPPAsText = () => {
     let text = `RENCANA PELAKSANAAN PEMBELAJARAN (RPP) BERBASIS TPACK & DEEP LEARNING\n`;
+    text += `Satuan Pendidikan: ${rppDocument.identitas.satuanPendidikan}\n`;
+    text += `Program Keahlian: ${rppDocument.identitas.programKeahlian}\n`;
+    text += `Konsentrasi Keahlian: ${rppDocument.identitas.konsentrasiKeahlian}\n`;
     text += `Mata Pelajaran: ${rppDocument.identitas.mataPelajaran}\n`;
     text += `Kelas/Semester: ${rppDocument.identitas.kelasSemester}\n`;
     text += `Materi Pokok: ${rppDocument.identitas.materiPokok}\n`;
@@ -31,6 +34,7 @@ export const RPPView: React.FC = () => {
 
     text += `A. IDENTITAS PEMBELAJARAN\n`;
     text += `Satuan Pendidikan: ${rppDocument.identitas.satuanPendidikan}\n`;
+    text += `Konsentrasi Keahlian: ${rppDocument.identitas.konsentrasiKeahlian}\n`;
     text += `Model: ${rppDocument.identitas.modelPembelajaran}\n`;
     text += `Pendekatan: ${rppDocument.identitas.pendekatan}\n\n`;
 
@@ -112,7 +116,7 @@ export const RPPView: React.FC = () => {
               <span>·</span>
               <span>KURIKULUM MERDEKA (FASE F)</span>
               <span>·</span>
-              <span className="text-sky-700 font-semibold">SMKN 1 NGLEGOK</span>
+              <span className="text-sky-700 font-semibold">SMKN 1 NGLEGOK · TEKNIK SEPEDA MOTOR (TSM)</span>
               <span>·</span>
               <span className="text-emerald-700 font-semibold">TPACK ADVANCING</span>
             </div>
@@ -120,7 +124,7 @@ export const RPPView: React.FC = () => {
               Rencana Pelaksanaan Pembelajaran (RPP) Berbasis TPACK & Deep Learning
             </h1>
             <p className="text-sm text-slate-600 mt-1 max-w-3xl">
-              Model pembelajaran mendalam (Mindful, Meaningful, Joyful) terintegrasi dengan Media Pembelajaran Interaktif (MPI) mandiri untuk penguasaan Teks Prosedur Bahasa Inggris Kelas XI SMKN 1 Nglegok.
+              Model pembelajaran mendalam (Mindful, Meaningful, Joyful) terintegrasi dengan Media Pembelajaran Interaktif (MPI) mandiri untuk penguasaan Teks Prosedur Bahasa Inggris (Service Manuals & Workshop SOP) Kelas XI Konsentrasi Keahlian Teknik Sepeda Motor (TSM) SMKN 1 Nglegok.
             </p>
           </div>
 
@@ -209,6 +213,13 @@ export const RPPView: React.FC = () => {
               </div>
 
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-100">
+                <span className="text-xs text-slate-500 font-medium block">Program & Konsentrasi Keahlian</span>
+                <span className="font-semibold text-sky-800">
+                  {rppDocument.identitas.programKeahlian} · {rppDocument.identitas.konsentrasiKeahlian}
+                </span>
+              </div>
+
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-100">
                 <span className="text-xs text-slate-500 font-medium block">Mata Pelajaran & Fase</span>
                 <span className="font-semibold text-slate-800">{rppDocument.identitas.mataPelajaran} (Fase F)</span>
               </div>
@@ -218,7 +229,7 @@ export const RPPView: React.FC = () => {
                 <span className="font-semibold text-slate-800">{rppDocument.identitas.kelasSemester}</span>
               </div>
 
-              <div className="p-3 bg-slate-50 rounded-lg border border-slate-100">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 sm:col-span-2">
                 <span className="text-xs text-slate-500 font-medium block">Alokasi Waktu</span>
                 <span className="font-semibold text-slate-800">{rppDocument.identitas.alokasiWaktu}</span>
               </div>
@@ -391,20 +402,37 @@ export const RPPView: React.FC = () => {
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-wide block mb-1">
                   Nama & Identitas MPI
                 </span>
-                <h3 className="text-base font-bold text-slate-900 mb-1">ProcedureCraft</h3>
-                <p className="text-xs text-slate-600">
-                  Media Pembelajaran Interaktif berbasis Single-File Web Application yang didesain secara adaptif untuk pembelajaran mandiri maupun klasikal.
+                <h3 className="text-base font-bold text-slate-900 mb-1">
+                  MotoPro English: Workshop Service Manual & Procedure Mastery
+                </h3>
+                <p className="text-xs text-slate-600 mb-2">
+                  Media Pembelajaran Interaktif (MPI) resmi bengkel Teknik Sepeda Motor (TSM) SMKN 1 Nglegok berbasis Single-File Web Application.
                 </p>
+                <div className="flex items-center gap-1.5 text-xs text-sky-700 font-mono font-semibold">
+                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                  <a
+                    href="https://motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline hover:text-sky-900 break-all"
+                  >
+                    motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio
+                  </a>
+                </div>
               </div>
 
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-wide block mb-1">
                   Platform & Arsitektur Teknologi
                 </span>
-                <h3 className="text-base font-bold text-slate-900 mb-1">Pure HTML5 + CSS3 + Vanilla JS</h3>
-                <p className="text-xs text-slate-600">
+                <h3 className="text-base font-bold text-slate-900 mb-1">Pure HTML5 + CSS3 + Vanilla JS (Single-File)</h3>
+                <p className="text-xs text-slate-600 mb-2">
                   100% Zero-External CDN Dependencies, Web Audio API synthesizer bawaan browser, dan kompatibel langsung dengan platform Ruang Murid Kemendikdasmen.
                 </p>
+                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                  <CheckCircle2 className="w-3 h-3" />
+                  Tersedia Online & Berkas Mandiri Luring (Offline Mode)
+                </span>
               </div>
             </div>
 

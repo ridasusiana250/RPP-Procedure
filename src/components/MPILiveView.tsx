@@ -43,13 +43,15 @@ export const MPILiveView: React.FC = () => {
               <span>·</span>
               <span>LIVE INTERACTIVE LEARNING MEDIA</span>
               <span>·</span>
+              <span className="text-sky-700 font-semibold">SMKN 1 NGLEGOK (TSM)</span>
+              <span>·</span>
               <span className="text-emerald-700 font-semibold">100% STANDALONE HTML</span>
             </div>
             <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
-              ProcedureCraft: Live Interactive Simulator
+              MotoPro English: Live Interactive Simulator
             </h1>
             <p className="text-sm text-slate-600 mt-1 max-w-3xl">
-              Media Pembelajaran Interaktif (MPI) ini berjalan secara langsung dari satu file HTML murni (<code className="text-sky-700 font-mono text-xs">/procedure_text_mpi.html</code>) tanpa memerlukan koneksi internet atau library eksternal.
+              Media Pembelajaran Interaktif (MPI) teks prosedur bengkel sepeda motor SMKN 1 Nglegok. Berjalan langsung dari berkas HTML mandiri (<code className="text-sky-700 font-mono text-xs">/procedure_text_mpi.html</code>) serta dapat diakses online di <a href="https://motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio" target="_blank" rel="noreferrer" className="text-sky-700 font-semibold underline">motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio</a>.
             </p>
           </div>
 

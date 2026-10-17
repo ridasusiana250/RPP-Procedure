@@ -21,14 +21,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Zone 1: Brand Wordmark */}
           <div className="flex items-center gap-3 shrink-0">
             <div className="w-9 h-9 bg-sky-700 text-white rounded-lg flex items-center justify-center font-bold text-lg shadow-sm">
-              P
+              🏍️
             </div>
             <div>
               <span className="text-base font-bold text-slate-900 tracking-tight whitespace-nowrap">
-                ProcedureCraft
+                MotoPro English
               </span>
               <div className="text-[11px] text-slate-500 font-medium whitespace-nowrap">
-                TPACK & MPI Bahasa Inggris XI · SMKN 1 Nglegok
+                Bahasa Inggris XI · Teknik Sepeda Motor SMKN 1 Nglegok
               </div>
             </div>
           </div>

@@ -29,82 +29,84 @@ export interface RubricCriterion {
 
 export const rppDocument = {
   identitas: {
-    satuanPendidikan: 'SMKN 1 Nglegok (Fase F)',
-    mataPelajaran: 'Bahasa Inggris',
-    kelasSemester: 'XI (Sebelas) / Ganjil',
-    materiPokok: 'Procedure Text (Recipes, Manuals, Lifehacks, Protocols)',
-    alokasiWaktu: '2 × 45 Menit (1 Pertemuan Tatap Muka / Blended)',
-    modelPembelajaran: 'Deep Learning Cycle (Memahami → Mengaplikasi → Merefleksi) dipadukan Problem-Based Learning (PBL) & Scenario Branching Simulation',
-    pendekatan: 'TPACK (Technological Pedagogical Content Knowledge) - Advancing Level',
-    platformIntegrasi: 'Ruang Murid / Rumah Pendidikan (Kemendikdasmen) & Standalone Web-Based MPI'
+    satuanPendidikan: 'SMKN 1 Nglegok',
+    programKeahlian: 'Teknik Otomotif',
+    konsentrasiKeahlian: 'Teknik Sepeda Motor (TSM / TBSM)',
+    mataPelajaran: 'Bahasa Inggris (English for Motorcycle Engineering)',
+    kelasSemester: 'XI TSM / Semester Ganjil',
+    materiPokok: 'Teks Prosedur (Manual Servis Sepeda Motor, SOP Bengkel, & Petunjuk K3)',
+    alokasiWaktu: '2 × 45 Menit (1 Pertemuan Tatap Muka di Ruang Teori Bengkel TSM)',
+    modelPembelajaran: 'Deep Learning Cycle (Memahami → Mengaplikasikan → Merefleksikan) dipadukan dengan Praktik Studi Kasus Nyata Bengkel (Problem-Based Learning)',
+    pendekatan: 'TPACK (Perpaduan Materi Kejuruan Otomotif, Cara Belajar Aktif, dan Media Digital Interaktif)',
+    platformIntegrasi: 'Aplikasi MotoPro English (https://motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio) & Portal Ruang Murid Kemendikdasmen'
   },
 
   tujuanPembelajaranABCD: [
     {
       code: 'TP-1',
-      title: 'Analisis Fungsi Sosial & Struktur Teks (Social Function & Generic Structure)',
+      title: 'Memahami Fungsi & Bagian Buku Manual Servis Sepeda Motor',
       abcdFormula: {
-        audience: 'Peserta didik kelas XI (A)',
-        behavior: 'mampu menganalisis fungsi sosial, struktur teks (Goal, Materials, Steps), dan target audiens dari 4 variasi teks prosedur (B)',
-        condition: 'setelah mengeksplorasi secara mandiri modul interaktif "Concept Lab" pada Media Pembelajaran Interaktif (MPI) ProcedureCraft (C)',
-        degree: 'dengan tingkat ketepatan minimal 85% pada lembar bedah teks interaktif (D).'
+        audience: 'Siswa kelas XI Teknik Sepeda Motor SMKN 1 Nglegok (A)',
+        behavior: 'dapat menemukan tujuan servis, peralatan yang dibutuhkan, dan urutan langkah kerja serta istilah teknis bengkel dalam bahasa Inggris (B)',
+        condition: 'setelah belajar mandiri lewat menu "Concept Lab" pada aplikasi MotoPro English (C)',
+        degree: 'dengan nilai ketepatan minimal 85% pada lembar bedah teks manual busi dan rem motor (D).'
       },
-      fullText: 'Melalui eksplorasi mandiri pada Concept Lab di MPI ProcedureCraft (Condition), peserta didik kelas XI (Audience) mampu menganalisis fungsi sosial, struktur teks (Goal, Materials, Steps), dan target audiens dari 4 variasi teks prosedur (Behavior) dengan tingkat ketepatan minimal 85% (Degree).'
+      fullText: 'Setelah belajar mandiri lewat modul Concept Lab di aplikasi MotoPro English (Condition), siswa kelas XI TSM SMKN 1 Nglegok (Audience) dapat menemukan tujuan teks, peralatan bengkel yang dipakai, dan urutan langkah servis sepeda motor dalam bahasa Inggris (Behavior) dengan ketepatan minimal 85% (Degree).'
     },
     {
       code: 'TP-2',
-      title: 'Evaluasi Kausalitas & Skenario Percabangan (Branching & Cause-Effect Reasoning)',
+      title: 'Mendeteksi Akibat Fatal Jika Salah Urutan Kerja & Baut Slek',
       abcdFormula: {
-        audience: 'Peserta didik kelas XI (A)',
-        behavior: 'mampu mendeteksi dan mengevaluasi konsekuensi logis dari penghilangan atau pembalikan urutan langkah (chronological misstep) (B)',
-        condition: 'melalui simulasi percabangan "What-If Crisis Lab: The Waterlogged Smartphone Rescue" pada MPI (C)',
-        degree: 'dengan menghasilkan rekomendasi penyelamatan perangkat yang tepat tanpa memicu short-circuit (D).'
+        audience: 'Siswa kelas XI TSM SMKN 1 Nglegok (A)',
+        behavior: 'dapat menganalisis bahaya dan kerusakan mesin jika salah urutan ganti oli atau mengencangkan baut pembuangan oli tanpa kunci torsi (B)',
+        condition: 'melalui simulasi interaktif "What-If Workshop Crisis" di aplikasi MotoPro English (C)',
+        degree: 'hingga mampu menentukan cara kerja yang benar agar ulir karter tidak rusak dan oli tidak bocor (D).'
       },
-      fullText: 'Melalui simulasi percabangan "What-If Crisis Lab" pada MPI (Condition), peserta didik kelas XI (Audience) mampu mendeteksi dan mengevaluasi konsekuensi logis akibat langkah yang terbalik atau terlewat (Behavior) hingga berhasil menyelamatkan perangkat tanpa kerusakan komponen (Degree).'
+      fullText: 'Melalui simulasi interaktif "What-If Workshop Crisis" di aplikasi MotoPro English (Condition), siswa kelas XI TSM SMKN 1 Nglegok (Audience) dapat menganalisis bahaya jika urutan servis dibalik atau baut dikencangkan sembarangan (Behavior) sehingga tahu langkah tepat mencegah ulir karter dol dan oli bocor (Degree).'
     },
     {
       code: 'TP-3',
-      title: 'Penerapan Kaidah Kebahasaan (Language Features)',
+      title: 'Menyusun Urutan Servis Buang Angin Rem Cakram Sepeda Motor',
       abcdFormula: {
-        audience: 'Peserta didik kelas XI (A)',
-        behavior: 'mampu menyusun kembali langkah-langkah acak menjadi urutan kronologis yang padu menggunakan imperative sentences, action verbs, dan temporal sequencers (B)',
-        condition: 'melalui tantangan interaktif "Chronological Sequence Arena" pada MPI (C)',
-        degree: 'dengan perolehan skor ketuntasan 100% dalam maksimal 3 kali percobaan (D).'
+        audience: 'Siswa kelas XI TSM SMKN 1 Nglegok (A)',
+        behavior: 'dapat menyusun kembali 6 langkah acak servis buang angin rem hidrolik (brake bleeding) menjadi urutan kerja yang runtut memakai kata kerja perintah dan kata hubung urutan waktu (B)',
+        condition: 'melalui game tantangan "Sequence Arena" di aplikasi MotoPro English (C)',
+        degree: 'dengan skor tuntas 100% dalam maksimal 3 kali mencoba (D).'
       },
-      fullText: 'Melalui tantangan "Sequence Arena" pada MPI (Condition), peserta didik kelas XI (Audience) mampu menyusun kembali instruksi acak menggunakan kalimat imperatif dan konjungsi temporal secara kohesif (Behavior) dengan ketuntasan 100% dalam maksimal 3 kali percobaan (Degree).'
+      fullText: 'Lewat game tantangan "Sequence Arena" di aplikasi MotoPro English (Condition), siswa kelas XI TSM SMKN 1 Nglegok (Audience) dapat menyusun langkah acak servis buang angin rem cakram motor memakai kata kerja perintah dan kata urutan waktu (Behavior) dengan nilai tuntas 100% (Degree).'
     },
     {
       code: 'TP-4',
-      title: 'Kreasi & Refleksi Metakognitif (Production & Digital Synthesis)',
+      title: 'Membuat Panduan Kerja (Job Sheet) & Menyadari Tanggung Jawab Mekanik',
       abcdFormula: {
-        audience: 'Peserta didik kelas XI (A)',
-        behavior: 'mampu memproduksi draf teks prosedur kontekstual berbasis kearifan lokal/solusi digital nyata serta merefleksikan kebermanfaatan proses belajar (B)',
-        condition: 'menggunakan instrumen refleksi digital dan formulir umpan balik analitik pada MPI (C)',
-        degree: 'memenuhi seluruh rubrik penilaian HOTS (kelengkapan struktur, ketepatan gramatikal imperatif, dan kejelasan instruksi) dengan predikat minimal Baik (D).'
+        audience: 'Siswa kelas XI TSM SMKN 1 Nglegok (A)',
+        behavior: 'dapat menulis draf panduan kerja (Job Sheet servis ringan) sederhana dalam bahasa Inggris serta menyadari bahwa ketelitian mekanik menentukan keselamatan nyawa pelanggan (B)',
+        condition: 'menggunakan formulir refleksi digital dan template kerja kejuruan di aplikasi MotoPro English (C)',
+        degree: 'memenuhi kriteria penilaian tugas bengkel dengan predikat minimal Baik (D).'
       },
-      fullText: 'Menggunakan formulir refleksi dan penugasan proyek kontekstual (Condition), peserta didik kelas XI (Audience) mampu memproduksi draf teks prosedur otentik dan merefleksikan proses belajarnya (Behavior) dengan predikat minimal Baik sesuai rubrik asesmen HOTS (Degree).'
+      fullText: 'Menggunakan formulir refleksi digital dan lembar panduan kerja (Condition), siswa kelas XI TSM SMKN 1 Nglegok (Audience) dapat menulis draf Job Sheet servis sederhana berbahasa Inggris serta menyadari pentingnya disiplin SOP demi keselamatan pengendara (Behavior) dengan predikat minimal Baik (Degree).'
     }
   ],
 
   capaianPembelajaran: {
-    elemenFaseF: 'Menyimak-Berbicara (Listening-Speaking) & Membaca-Memirsa (Reading-Viewing)',
-    deskripsiCP: 'Pada akhir Fase F, peserta didik menggunakan teks lisan, tulisan, dan visual dalam bahasa Inggris untuk berkomunikasi sesuai dengan situasi, tujuan, dan pemirsa/pembacanya. Berbagai jenis teks seperti narasi, deskripsi, eksposisi, prosedur, telaah, dan diskusi menjadi rujukan utama dalam mempelajari bahasa Inggris pada fase ini. Peserta didik menggunakan bahasa Inggris untuk berdiskusi dan menyampaikan keinginan/perasaan. Peserta didik memproduksi teks dengan struktur organisasi yang jelas dan kaidah kebahasaan yang tepat.',
+    elemenFaseF: 'Membaca-Memirsa & Menyimak-Berbicara dalam Konteks Kerja Bengkel Sepeda Motor',
+    deskripsiCP: 'Pada akhir Fase F, siswa SMK jurusan Teknik Sepeda Motor mampu memahami dan menggunakan bahasa Inggris sederhana dan praktis untuk membaca buku manual servis pabrikan (Honda, Yamaha, Suzuki, Kawasaki), memahami simbol peringatan keselamatan kerja di bengkel (K3), serta menyusun urutan langkah kerja (Job Sheet / SOP servis berkala) menggunakan kata kerja perintah yang lugas dan istilah onderdil yang tepat.',
     dimensiProfilLulusan: [
       {
         dimensi: 'Bernalar Kritis',
-        perilaku: 'Menganalisis sebab-akibat ketika instruksi prosedur tidak dipatuhi dan mengevaluasi efektivitas kata kerja tindakan dalam memandu pengguna.'
+        perilaku: 'Mampu membaca alur panduan servis dan tahu akibat buruknya jika ada langkah kerja bengkel yang dilewati atau dibalik.'
       },
       {
         dimensi: 'Mandiri',
-        perilaku: 'Mengatur ritme belajar sendiri (self-paced learning) melalui navigasi non-linear MPI dan melakukan penilaian diri (self-reflection).'
+        perilaku: 'Percaya diri membaca buku manual dan mencoba memecahkan masalah servis motor sendiri tanpa selalu menunggu disuruh guru.'
       },
       {
         dimensi: 'Gotong Royong',
-        perilaku: 'Berdiskusi dan berkolaborasi dalam memecahkan skenario simulasi darurat prosedur bersama rekan sebangku.'
+        perilaku: 'Kompak bekerja sama dalam tim mekanik saat praktik, saling mengingatkan alat kerja dan keselamatan kerja teman di bengkel.'
       },
       {
         dimensi: 'Kreatif',
-        perilaku: 'Menghasilkan rancangan teks prosedur alternatif yang solutif untuk permasalahan sehari-hari peserta didik.'
+        perilaku: 'Mampu membuat lembar catatan servis ringkas dwibahasa (Indonesia-Inggris) yang rapi dan mudah dibaca oleh mekanik lain maupun konsumen.'
       }
     ]
   },
@@ -112,247 +114,249 @@ export const rppDocument = {
   tpackMatrix: [
     {
       domain: 'CK',
-      fullName: 'Content Knowledge (Pengetahuan Konten)',
-      description: 'Penguasaan mendalam materi Bahasa Inggris terkait teks prosedur: Definisi, Fungsi Sosial (memberikan petunjuk runtut untuk mencapai hasil), Generic Structure (Goal, Materials/Tools, Steps/Methods), Kaidah Kebahasaan (Imperatives, Action Verbs, Temporal Conjunctions/Sequencers, Adverbials), serta 4 klasifikasi (Recipes, Manuals, Lifehacks, Protocols).',
-      concreteImplementation: 'Guru membedah teks otentik (resep herbal nusantara Wedang Jahe dan manual darurat smartphone) dengan menyoroti akurasi istilah linguistik tanpa miskonsepsi.'
+      fullName: 'Content Knowledge (Materi Bahasa Inggris Teknik Motor)',
+      description: 'Materi bahasa Inggris yang langsung kepakai di bengkel: Teks Prosedur (Manual Servis & SOP), bagian pokok teks (Tujuan servis, Alat/Bahan yang dipakai, dan Langkah kerja), kata kerja perintah bengkel (contoh: "Tighten" = kencangkan, "Loosen" = kendorkan, "Inspect" = periksa, "Measure" = ukur, "Bleed" = buang angin palsu rem), kata penanda urutan ("First, Next, Then, Finally"), serta 4 macam bacaan di bengkel (Buku Manual Pabrikan, SOP Servis Berkala, Kiat Mekanik, dan Aturan K3 Bengkel).',
+      concreteImplementation: 'Guru membedah buku manual servis motor asli (contoh: servis busi dan rem cakram) agar siswa familiar dengan istilah onderdil dan instruksi kerja pabrik.'
     },
     {
       domain: 'PK',
-      fullName: 'Pedagogical Knowledge (Pengetahuan Pedagogi)',
-      description: 'Pemahaman tentang teori belajar kognitif, konstruktivisme, scaffolding, active learning, dan siklus Deep Learning (Berkesadaran, Bermakna, Menggembirakan: Memahami → Mengaplikasi → Merefleksi) yang dipadukan dengan teknik bertanya sokratik dan gamifikasi edukatif.',
-      concreteImplementation: 'Guru menerapkan diferensiasi proses: membagi fase orientasi kesadaran belajar, membimbing eksplorasi mandiri, dan memfasilitasi peer-discussion saat menganalisis hasil kuis.'
+      fullName: 'Pedagogical Knowledge (Cara Mengajar yang Seru & Masuk Akal)',
+      description: 'Cara mengajar anak SMK yang berjiwa praktik: tidak dijejali hafalan teori rumus grammar yang kaku, melainkan diajak praktik langsung lewat siklus Deep Learning: Sadar pentingnya SOP buat nyawa orang (Berkesadaran), Paham manfaatnya buat kerjaan mekanik sehari-hari (Bermakna), dan Asyik mencoba simulasi tanpa takut salah (Menggembirakan).',
+      concreteImplementation: 'Guru membagi pembelajaran jadi 3 tahap santai tapi fokus: Memahami teks lewat warna-warni, Mencoba skenario krisis ganti oli di game, dan Merefleksikan tanggung jawab etika mekanik.'
     },
     {
       domain: 'TK',
-      fullName: 'Technological Knowledge (Pengetahuan Teknologi)',
-      description: 'Kecakapan mengoperasikan teknologi digital: Media Pembelajaran Interaktif (MPI) single-file HTML5/CSS/JS mandiri, browser modern, web audio synthesizer, platform Ruang Murid Kemendikdasmen, dan proyektor kelas.',
-      concreteImplementation: 'Guru mengelola distribusi file MPI baik secara daring via Ruang Murid maupun luring (offline) via flashdisk / local server tanpa kendala dependensi eksternal.'
+      fullName: 'Technological Knowledge (Pemanfaatan Aplikasi Digital Mandiri)',
+      description: 'Kecakapan menggunakan media pembelajaran interaktif "MotoPro English". Aplikasinya ringan, berformat 1 file HTML murni, ada suara efek osilator lokal, dan bisa dijalankan di komputer lab bengkel atau HP siswa tanpa internet (100% offline).',
+      concreteImplementation: 'Guru cukup meng-copy file HTML MotoPro English ke flashdisk atau mengirimnya via WhatsApp kelas; siswa langsung klik dua kali untuk membukanya di browser apa saja.'
     },
     {
       domain: 'PCK',
-      fullName: 'Pedagogical Content Knowledge (Pedagogi + Konten)',
-      description: 'Strategi mengajar konsep teks prosedur secara efektif: mengubah instruksi abstrak menjadi aktivitas interaktif visual, memandu murid dari identifikasi unsur kata (mikro) ke pemahaman tujuan komunikatif (makro).',
-      concreteImplementation: 'Guru menyajikan dekonstruksi teks model beranotasi warna (color-coded text anatomy) agar konsep gramatikal imperatif mudah dipahami oleh berbagai gaya belajar murid.'
+      fullName: 'Pedagogical Content Knowledge (Trik Mengajarkan Teks Bahasa Inggris Teknik)',
+      description: 'Trik jitu guru mengemas teks manual servis bahasa Inggris yang biasanya tebal dan bikin ngantuk jadi sangat gampang dicerna anak SMK: teks dibedah memakai kode warna (warna biru untuk Goal/Tujuan, kuning untuk Kunci/Alat, hijau untuk Urutan Langkah, dan merah untuk Kata Kerja Perintah).',
+      concreteImplementation: 'Siswa mengeklik kata pada teks manual di layar; aplikasi langsung menjelaskan artinya dalam bahasa bengkel sehari-hari.'
     },
     {
       domain: 'TCK',
-      fullName: 'Technological Content Knowledge (Teknologi + Konten)',
-      description: 'Pemanfaatan fitur teknologi digital untuk merepresentasikan esensi materi prosedur yang tidak mungkin dilakukan buku cetak biasa, seperti percabangan sebab-akibat (branching logic) dan simulasi kesalahan langkah.',
-      concreteImplementation: 'Menggunakan simulator digital "What-If" di mana sistem memvisualisasikan animasi korsleting listrik bila urutan penanganan hp basah terbalik, membuktikan sifat mutlak "chronological order".'
+      fullName: 'Technological Content Knowledge (Simulasi Kerusakan Mesin Tanpa Resiko Nyata)',
+      description: 'Pemanfaatan simulasi game interaktif untuk melihat langsung akibat salah kerja (misal: baut karter slek atau rem blong). Hal ini mustahil dipraktikkan sengaja pada motor sungguhan di sekolah karena bisa merusak mesin dan biayanya sangat mahal.',
+      concreteImplementation: 'Siswa mencoba pilihan salah di game; layar langsung memperlihatkan visual drat karter aluminium pecah dan oli tumpah saat dikencangkan tanpa kunci torsi.'
     },
     {
       domain: 'TPK',
-      fullName: 'Technological Pedagogical Knowledge (Teknologi + Pedagogi)',
-      description: 'Penggunaan teknologi untuk menciptakan pengalaman pedagogis yang student-centered: umpan balik langsung (immediate feedback), navigasi non-linear mandiri, dan pengumpulan analitik formatif real-time.',
-      concreteImplementation: 'Siswa belajar sesuai kecepatan masing-masing (pacing mandiri) tanpa rasa takut salah karena sistem MPI memberikan penjelasan pedagogis ramah setiap kali ada opsi yang keliru.'
+      fullName: 'Technological Pedagogical Knowledge (Belajar Bebas Cemas & Umpan Balik Cepat)',
+      description: 'Membuat suasana kelas bengkel yang aktif dan nyaman: siswa tidak takut salah memilih kunci atau salah menerjemahkan kalimat, karena aplikasi langsung memberi tahu alasan benar/salahnya detik itu juga dengan bahasa yang ramah.',
+      concreteImplementation: 'Siswa mencoba-coba tombol simulasi sendiri; sistem langsung memberikan feedback: "Wah, kalau baut dipaksa pakai pipa panjang tanpa kunci torsi, drat aluminium karter bakal rontok!"'
     },
     {
       domain: 'TPACK',
-      fullName: 'Technological Pedagogical Content Knowledge (Sinergi Utuh)',
-      description: 'Integrasi holistik di mana teknologi, pedagogi mendalam, dan materi bahasa Inggris menyatu mulus untuk mentransformasi pengalaman belajar dari penerimaan pasif menjadi eksplorasi kritis yang memberdayakan.',
-      concreteImplementation: 'Guru bertindak sebagai fasilitator orkestrasi: memadukan refleksi berkesadaran (deep learning), analitik diagnostic quiz MPI (TPK), eksperimentasi branching prosedur otentik (TCK), dan verifikasi bahasa Inggris kontekstual (PCK).'
+      fullName: 'Technological Pedagogical Content Knowledge (Sinergi Total Guru & Siswa SMK)',
+      description: 'Perpaduan lengkap antara bahasa Inggris instruksi bengkel, ilmu teknik motor, cara belajar yang menyenangkan, dan teknologi simulasi digital untuk mencetak calon mekanik SMKN 1 Nglegok yang jago praktik dan siap baca manual motor teknologi baru (injeksi dan motor listrik).',
+      concreteImplementation: 'Guru Bahasa Inggris dan Guru Bengkel TSM berkolaborasi: pelajaran bahasa Inggris langsung nyambung ke motor yang sedang dibongkar siswa di ruang praktik.'
     }
   ],
 
   tpackLevelTarget: {
-    level: 'Advancing (Level 5 / Tertinggi)',
-    rationale: 'Teknologi tidak sekadar menggantikan media kertas (Substitution/Augmentation), melainkan mentransformasi tugas belajar (Redefinition). Murid bereksperimen dengan pohon keputusan (decision trees), menerima feedback linguistik instan yang dipersonalisasi, dan guru memanfaatkan analitik kuis real-time untuk diferensiasi intervensi.'
+    level: 'Advancing (Level 5 / Sangat Mandiri & Berdaya Guna)',
+    rationale: 'Teknologi di sini bukan cuma pajangan atau sekadar mengganti buku cetak jadi file PDF, tapi benar-benar mengubah cara belajar menjadi simulasi investigasi kerusakan motor interaktif yang aman, seru, dan terukur.'
   },
 
   mpiCharacteristics: [
     {
-      title: '1. Interaktivitas (User Control)',
-      description: 'Peserta didik memegang kendali penuh atas navigasi: bebas menentukan kecepatan membaca, memutar ulang audio efek, memilih urutan modul yang ingin dipelajari, dan mengulang simulasi krisis berkali-kali tanpa batas.'
+      title: '1. Siswa Pegang Kendali Penuh (User Control & Interactivity)',
+      description: 'Siswa bebas mengatur alur belajarnya sendiri: bisa mengulang simulasi ganti oli, mencoba lagi susun langkah rem cakram, memilih modul busi atau rem yang ingin dipelajari duluan, tanpa dibatasi waktu kaku.'
     },
     {
-      title: '2. Feedback Langsung (Immediate Feedback)',
-      description: 'Setiap kali memilih opsi pada simulasi percabangan atau menjawab butir kuis adaptif, sistem seketika memberikan alasan pedagogis linguistik spesifik (bukan sekadar "Benar/Salah", tetapi "Mengapa kalimat tersebut tergolong imperatif atau mengapa langkah tersebut membakar sirkuit").'
+      title: '2. Tahu Benar/Salah Detik Itu Juga (Immediate Feedback)',
+      description: 'Begitu siswa mengeklik tombol aksi atau menjawab kuis, sistem langsung memunculkan penjelasan logis: "Kenapa harus pakai kata dasar Torque?" dan "Kenapa baut oli karter tidak boleh dikencangkan sekuat tenaga manusia?"'
     },
     {
-      title: '3. Non-Linearitas (Branching Navigation)',
-      description: 'Struktur media tidak memaksa siswa berjalan linier slide 1-2-3. Siswa dapat melompat dari Mission Hub ke Concept Lab, mencoba What-If Simulator, berpindah ke Sequence Arena, atau mengecek Kuis Adaptif sesuai kesiapan kognitif mereka.'
+      title: '3. Bebas Pilih Menu (Non-Linear Branching)',
+      description: 'Siswa tidak dipaksa membaca halaman 1 sampai selesai baru boleh ke halaman 2. Siswa bisa langsung lompat dari Beranda ke Laboratorium Konsep, mencoba Simulator Krisis, menantang diri di Sequence Arena, atau mengisi refleksi diri.'
     },
     {
-      title: '4. Integrasi Multimedia (Prinsip Kognitif Mayer)',
-      description: 'Menerapkan Signaling Principle (penandaan warna teks untuk Goal, Materials, Steps, Imperatives), Segmenting Principle (materi dibagi ke dalam tab ringkas), Coherence Principle (bebas dari dekorasi gambar yang mengganggu fokus kognitif), dan Web Audio API untuk konfirmasi auditori subtil.'
+      title: '4. Visual Jelas & Rapi Sesuai Prinsip Mayer (Multimedia Integration)',
+      description: 'Tampilan bersih tanpa gambar hiasan yang membingungkan: warna teks menandai jenis kata (Signaling), materi dibagi per sistem motor (Segmenting), istilah fokus ke dunia otomotif (Coherence), dan ada efek suara klik mesin yang memuaskan.'
     }
   ],
 
   kegiatanPembelajaran: [
     {
       phase: 'I. Kegiatan Pendahuluan',
-      subPhase: 'Tahap Berkesadaran (Mindful Awakening)',
+      subPhase: 'Fase Berkesadaran (Menyadari Mulianya Peran Mekanik)',
       duration: '15 Menit',
       deepLearningPrinciple: 'Berkesadaran (Mindful)' as const,
       integration: {
-        technology: 'Layar Proyektor / Tampilan Pembuka MPI "ProcedureCraft: Mission Hub"',
-        pedagogy: 'Koneksi emosional, pertanyaan pemantik sokratik, mindfulness breathing, penjelasan tujuan ABCD',
-        content: 'Konsep awal pentingnya prosedur dalam mencegah bahaya dan mencapai efisiensi'
+        technology: 'Layar Proyektor / Tampilan Pembuka Aplikasi "MotoPro English: Mission Hub TSM"',
+        pedagogy: 'Menarik napas tenang (mindful breathing), cek keselamatan K3, cerita kasus nyata baut oli jebol, dan penjelasan tujuan belajar',
+        content: 'Pentingnya mekanik paham bahasa Inggris buku manual servis demi keselamatan nyawa pengendara di jalan'
       },
       activities: [
-        'Guru membuka kelas dengan salam, memeriksa kesiapan fisik dan ruang kelas, dilanjutkan doa bersama (Beriman & Bertakwa).',
-        'Mindful Breathing Moment (2 menit): Guru mengajak murid duduk tegak, menarik napas dalam, dan memfokuskan kesadaran penuh pada kehadiran diri di ruang belajar hari ini.',
-        'Apersepsi Kontekstual & Video/Stori Pemantik: "Pernahkah kalian membeli perabot atau merakit gadget baru tanpa membaca petunjuk? Apa akibatnya?" Murid menceritakan pengalaman pribadi (baut tertukar, ponsel eror, masakan gosong).',
-        'Orientasi Tujuan Pembelajaran ABCD: Guru menampilkan layar "Mission Hub" pada MPI dan mengomunikasikan formula ABCD tujuan pembelajaran dengan bahasa yang jelas dan memotivasi.',
-        'Pemberian Pre-test Singkat/Diagnostik Awal: Mengetahui pemahaman awal murid mengenai perbedaan imperative vs descriptive sentence.'
+        'Guru menyapa siswa dengan ramah di ruang teori bengkel, mengecek kerapian baju wearpack dan sepatu keselamatan, lalu mengajak berdoa bersama.',
+        'Latihan Fokus & Menyadari Peran (Mindful Breathing, 3 menit): Guru mengajak siswa duduk tegak, tarik napas dalam, dan hening sejenak: "Anak-anakku calon mekanik hebat, ingatlah bahwa setiap baut dan mur yang kalian pasang pada sepeda motor berkaitan langsung dengan keselamatan nyawa orang di jalan raya. Kita bekerja dengan teliti dan penuh tanggung jawab."',
+        'Pertanyaan Pemantik dari Kasus Nyata: Guru memperlihatkan foto baut pembuangan oli mesin yang dratnya slek/jebol akibat dikencangkan asal-asalan tanpa kunci torsi. Guru bertanya santai: "Kira-kira apa jadinya kalau mekanik tidak bisa membaca buku panduan resmi berbahasa Inggris dan cuma mengandalkan ilmu kira-kira perasaan tangan?" Siswa antusias menjawab bersahutan.',
+        'Penyampaian Tujuan Belajar: Guru membuka aplikasi MotoPro English di proyektor, menjelaskan target apa saja yang bakal dikuasai hari ini dengan bahasa yang santai dan jelas.',
+        'Kuis Tebak Cepat (Pre-Test Santai): Mengetes pemahaman awal siswa membedakan kata perintah bengkel (contoh: "Inspect, Tighten, Measure") dengan kalimat cerita biasa.'
       ]
     },
     {
       phase: 'II. Kegiatan Inti - Langkah 1',
-      subPhase: 'Tahap Memahami (Meaningful Understanding)',
+      subPhase: 'Fase Memahami (Membedah Manual Servis Busi Motor)',
       duration: '25 Menit',
       deepLearningPrinciple: 'Bermakna (Meaningful)' as const,
       integration: {
-        technology: 'Modul "Concept Lab" MPI (Interactive Color-Coded Dissector & Subtab Navigator)',
-        pedagogy: 'Inquiry-based exploration, scaffolded concept breakdown, collaborative pair-discussion',
-        content: 'Social Function, Generic Structure (Goal-Material-Step), Language Features (Imperatives, Action Verbs, Connectives), 4 Types'
+        technology: 'Menu "Concept Lab" pada MotoPro English (Fitur Bedah Teks Manual Busi Berkode Warna)',
+        pedagogy: 'Investigasi teks berpasangan (teman sebengkel/service bay pair), diskusi santai, dan pendampingan terarah oleh guru',
+        content: 'Tujuan teks manual, bagian pokok (Goal, Tools, Steps), kata kerja perintah (Imperatives), dan jenis bacaan di bengkel'
       },
       activities: [
-        'Siswa secara berpasangan membuka MPI di perangkat masing-masing (atau mengakses layar sentuh kelas/komputer lab).',
-        'Siswa mengeksplorasi tab "1. Social Function" dan mendiskusikan mengapa teks prosedur menggunakan bahasa yang objektif dan lugas dibanding teks cerita naratif.',
-        'Eksplorasi Fitur Anatomi Interaktif (Interactive Dissector): Siswa mengeklik teks "Wedang Jahe" pada MPI. Setiap klik pada bagian Goal, Ingredients, Imperatives, dan Temporal Sequencers akan memunculkan penjelasan fungsi gramatikalnya.',
-        'Guru berkeliling memberikan scaffolding (bimbingan terarah) bagi kelompok yang membutuhkan penguatan perbedaan kata kerja dasar (bare infinitive) dengan bentuk gerund/past tense.',
-        'Siswa mengidentifikasi 4 jenis teks prosedur (Recipes, Manuals, Lifehacks, Protocols) dan mengaitkannya dengan dokumen otentik di kehidupan sehari-hari.'
+        'Siswa duduk berpasangan membuka aplikasi MotoPro English di laptop lab atau di HP masing-masing.',
+        'Siswa membuka tab "1. Social Function" dan mendiskusikan mengapa buku manual bengkel resmi Honda/Yamaha/Suzuki selalu memakai kalimat perintah yang singkat, jelas, dan ada angka pastinya (misal: jarak renggang busi 0.8–0.9 mm, torsi 16 N·m).',
+        'Mencoba Fitur Bedah Teks Busi (Interactive Dissector): Siswa mengeklik teks panduan servis busi motor ("How to Inspect, Clean, and Gap a Motorcycle Spark Plug"). Saat diklik, warna biru menunjukkan tujuan, kuning menunjukkan kunci dan feeler gauge, hijau menunjukkan langkah kerja, dan merah menunjukkan kata kerja perintah. Penjelasannya langsung muncul di bawahnya.',
+        "Guru berkeliling ke meja siswa, memberi contoh nyata: 'Nah, perhatikan kata Tighten di awal kalimat. Di bengkel kita langsung bilang Kencangkan!, tidak perlu panjang lebar bilang You must tighten... biar mekanik tidak bingung.'",
+        'Siswa membaca 4 ragam bacaan di bengkel: (1) Buku Manual Pabrikan, (2) SOP Servis Berkala, (3) Kiat Cepat Mekanik, dan (4) Aturan Keselamatan K3 Bengkel.'
       ]
     },
     {
       phase: 'II. Kegiatan Inti - Langkah 2',
-      subPhase: 'Tahap Mengaplikasi (Joyful Hands-On Application)',
+      subPhase: 'Fase Mengaplikasikan (Serunya Simulasi Krisis Oli & Menata Servis Rem)',
       duration: '30 Menit',
       deepLearningPrinciple: 'Menggembirakan (Joyful)' as const,
       integration: {
-        technology: 'Modul "What-If Simulator" & "Sequence Arena" pada MPI',
-        pedagogy: 'Problem-solving simulation, gamified decision tree, immediate feedback loop, experiential learning',
-        content: 'Evaluasi konsekuensi salah langkah dan penyusunan urutan instruksi kronologis yang kohesif'
+        technology: 'Menu "What-If Workshop Crisis" & "Sequence Arena" di aplikasi MotoPro English',
+        pedagogy: 'Belajar lewat simulasi aman tanpa resiko (safe failure), game tantangan geser langkah kerja, dan kuis adaptif instan',
+        content: 'Akibat salah urutan ganti oli motor dan latihan merangkai urutan servis buang angin rem cakram sepeda motor'
       },
       activities: [
-        'Misi Simulasi Krisis ("What-If Crisis Lab"): Siswa masuk ke simulasi penyelamatan smartphone basah. Siswa dihadapkan pada 3 tahapan kritis. Jika mereka memilih menghidupkan hp atau mengeringkan dengan hair dryer bersuhu tinggi, simulator menampilkan visual kerusakan sirkuit dan ledakan baterai.',
-        'Siswa merasakan kegembiraan belajar berbasis konsekuensi nyata (joyful learning through safe failure) dan menyimpulkan mengapa urutan logis (chronological order) bersifat mutlak dalam teks prosedur.',
-        'Tantangan "Sequence Arena": Siswa menyusun ulang 6 potongan langkah mengganti ban mobil bocor ("How to Safely Replace a Flat Tire") yang teracak menggunakan tombol swap interaktif.',
-        'Siswa mengecek validasi urutan; sistem menghitung skor XP seketika dan memberikan audio feedback.',
-        'Pengerjaan "Adaptive Mastery Quiz": Siswa menyelesaikan 5 soal HOTS berbobot di layar 5. Guru memantau dashboard analitik formatif untuk melihat tingkat penguasaan kelas pada tiap aspek kompetensi.'
+        'Main Simulator Krisis Bengkel ("What-If Workshop Crisis"): Siswa dihadapkan pada skenario nyata servis ganti oli motor 4-tak.',
+        'Siswa mencoba pilihan ekstrem: ada siswa yang sengaja memilih opsi mengencangkan baut oli sekuat tenaga pakai pipa besi panjang. Layar langsung menampilkan visual ulir karter aluminium yang rontok/dol dan oli tumpah! Siswa tertawa sekaligus paham risiko fatalnya.',
+        'Siswa belajar dengan gembira tanpa takut merusakkan mesin motor sungguhan di bengkel (joyful learning through safe failure), dan langsung paham kenapa buku manual menyuruh pakai kunci torsi tepat 24 N·m.',
+        'Tantangan Game "Sequence Arena": Siswa menyusun ulang 6 potongan langkah acak servis buang angin rem cakram motor ("How to Bleed and Service a Motorcycle Hydraulic Disc Brake") menggunakan tombol panah naik-turun.',
+        'Siswa mengecek hasilnya; jika urutan benar semua, muncul suara lonceng kemenangan dan skor XP mekanik bertambah.',
+        'Mengerjakan 5 Kuis Diagnostik Singkat: Siswa menjawab 5 soal pilihan ganda tentang manual bengkel motor. Guru memantau hasil nilai siswa untuk melihat bagian mana yang perlu diperjelas lagi.'
       ]
     },
     {
       phase: 'II. Kegiatan Inti - Langkah 3',
-      subPhase: 'Tahap Merefleksi (Reflective Synthesis)',
+      subPhase: 'Fase Merefleksikan (Menilai Diri Sendiri & Cetak Sertifikat Mekanik)',
       duration: '10 Menit',
       deepLearningPrinciple: 'Berkesadaran (Mindful)' as const,
       integration: {
-        technology: 'Modul "Reflection & Certificate" MPI (Digital Star-Rating, Metacognitive Prompts & Badge Generator)',
-        pedagogy: 'Metacognitive self-assessment, consolidation, connecting learning to real life',
-        content: 'Internalisasi kaidah prosedur dan kesadaran berpikir terstruktur dalam pemecahan masalah'
+        technology: 'Menu "Reflection & Certificate" di MotoPro English (Bintang Kepahaman, Form Refleksi, & Generator Sertifikat)',
+        pedagogy: 'Penilaian diri jujur (self-assessment), janji keselamatan kerja mekanik, dan apresiasi sertifikat digital',
+        content: 'Menyadari pentingnya bahasa Inggris teknik sebagai modal sukses mekanik di era motor injeksi dan motor listrik'
       },
       activities: [
-        'Siswa mengisi instrumen refleksi digital di MPI: menuliskan nama lengkap, memberi peringkat kepercayaan diri pemahaman imperatif (1-5 bintang), dan menuliskan 1 hal paling berkesan dari simulasi.',
-        'Siswa merumuskan rencana aksi nyata: satu situasi di rumah/sekolah di mana mereka akan menuliskan instruksi prosedur yang jelas (misal: panduan streaming live OSIS, resep bekal sehat, protokol keselamatan lab kimia).',
-        'Sistem menerbitkan sertifikat digital interaktif ("Certificate of Procedural Competence") berisikan perolehan XP dan capaian TPACK Advancing yang dapat disimpan/dicetak siswa sebagai portofolio belajar.'
+        'Siswa membuka menu refleksi di HP/laptop: mengetikkan nama lengkap, kelas (contoh: XI TSM 1 SMKN 1 Nglegok), dan mengeklik bintang 1 sampai 5 sesuai rasa percaya dirinya memahami buku manual bahasa Inggris.',
+        'Siswa menjawab pertanyaan refleksi santai: "Kenapa seorang mekanik modern wajib bisa bahasa Inggris buku manual?" Siswa menulis jawaban jujur, misalnya: karena motor injeksi baru dan motor listrik panduan kelistrikannya semua pakai bahasa Inggris.',
+        'Siswa menuliskan janji kerja di bengkel: selalu memakai kacamata pengaman/sarung tangan dan tidak akan menebak-nebak torsi baut tanpa buku manual.',
+        'Aplikasi langsung menerbitkan sertifikat digital resmi: "Certificate of Procedural Competence in Motorcycle Engineering - SMKN 1 Nglegok" lengkap dengan nama siswa dan skor XP yang bisa langsung disimpan ke HP.'
       ]
     },
     {
       phase: 'III. Kegiatan Penutup',
-      subPhase: 'Penguatan, Apresiasi & Tindak Lanjut',
+      subPhase: 'Penguatan, Tepuk Tangan Apresiasi & Tindak Lanjut',
       duration: '10 Menit',
       deepLearningPrinciple: 'Bermakna (Meaningful)' as const,
       integration: {
-        technology: 'Tautan Tugas Rumah Pendidikan / Ruang Murid Kemendikdasmen',
-        pedagogy: 'Whole-class debrief, positive reinforcement, homework extension',
-        content: 'Rangkuman holistik materi dan penugasan proyek otentik mandiri'
+        technology: 'Modul Bahasa Inggris SMK di Portal Ruang Murid Kemendikdasmen',
+        pedagogy: 'Tanya jawab santai penutup, apresiasi kerja keras siswa, pemberian tugas proyek praktis Job Sheet',
+        content: 'Rangkuman materi dan tugas membuat Job Sheet servis sederhana di bengkel sekolah'
       },
       activities: [
-        'Guru bersama 2 perwakilan siswa menyimpulkan 3 poin kunci pembelajaran hari ini: (1) Esensi fungsi sosial teks prosedur, (2) Formula anatomi Goal-Materials-Steps, (3) Kekuatan kalimat imperatif dan konjungsi temporal.',
-        'Guru memberikan apresiasi kepada seluruh murid atas antusiasme dan partisipasi aktif selama simulasi krisis.',
-        'Tindak Lanjut & Penugasan Berdiferensiasi di Ruang Murid: Siswa diminta mengunggah draf teks prosedur sederhana kreasi sendiri (Resep masakan khas daerah, tips produktivitas belajar, atau manual aplikasi ponsel) ke LMS Ruang Murid Kemendikdasmen.',
-        'Kelas ditutup dengan doa bersama dan salam penutup yang hangat.'
+        'Guru bersama perwakilan siswa menyimpulkan 3 pesan penting hari ini: (1) Buku manual adalah sahabat mekanik agar kerja aman, (2) Struktur Goal-Tools-Steps bikin kerja teratur dan cepat, (3) Kata perintah bahasa Inggris itu simpel dan to-the-point.',
+        'Guru memberikan pujian dan tepuk tangan meriah kepada seluruh calon mekanik muda SMKN 1 Nglegok yang sudah belajar dengan sangat antusias dan teliti.',
+        'Tugas Praktik Lanjutan di Ruang Murid: Siswa mengunduh format Job Sheet di portal Ruang Murid Kemendikdasmen dan menulis panduan kerja servis sederhana (bisa memilih: Penyetelan Rantai Roda / Servis Busi / Pembersihan Filter Udara) dalam bahasa Inggris.',
+        'Pelajaran ditutup dengan doa bersama dan yel-yel kebanggaan vokasi: "SMK Bisa! SMK Hebat! SMKN 1 Nglegok Bermutu dan Berkarakter!"'
       ]
     }
   ],
 
   asesmen: {
     formatif: {
-      teknik: 'Asesmen Formatif Berbasis Data Analitik MPI (Real-Time Performance Data)',
-      instrumen: '5 Soal Adaptif Pilihan Ganda Bernalar Kritis + Skor Ketuntasan Sequence Arena + Catatan Log Simulator',
-      keterangan: 'Memberikan data diagnostik langsung per butir indikator (Fungsi Sosial, Struktur Teks, Kalimat Imperatif, Konjungsi Temporal, Analisis Kausalitas HOTS).'
+      teknik: 'Penilaian Formatif Berbasis Data Nilai Waktu-Nyata di Aplikasi MotoPro English',
+      instrumen: '5 Soal Kuis Pilihan Ganda Konteks Bengkel Motor + Skor Game Urutan Rem Cakram + Hasil Simulasi Ganti Oli Mesin',
+      keterangan: 'Guru langsung tahu detik itu juga siapa siswa yang sudah paham kata kerja perintah bengkel dan siapa yang masih butuh dibantu.'
     },
     sumatif: {
-      teknik: 'Penilaian Produk Otentik (Authentic Writing Task) & Portofolio Digital',
-      instrumen: 'Tugas penulisan 1 teks prosedur kontekstual (Pilihan: Recipe khas daerah / Tech User Guide / School Safety Protocol) dilengkapi infografis atau diagram alur langkah.',
-      kriteria: 'Kelengkapan generik teks (Goal, Materials, Steps), ketepatan tata bahasa imperatif & temporal markers, kejelasan instruksi, serta kemenarikan sajian visual.'
+      teknik: 'Tugas Praktik Produk Nyata (Membuat Draf Job Sheet Servis Motor)',
+      instrumen: 'Membuat 1 lembar Job Sheet / SOP Servis Ringan Sepeda Motor dalam Bahasa Inggris (Pilihan topik: Menyetel Rantai Roda / Mengganti Busi / Membersihkan Filter Udara) lengkap dengan daftar kunci yang dipakai dan urutan kerjanya.',
+      kriteria: 'Kelengkapan susunan teks (Ada Tujuan, Alat, dan Langkah kerja), ketepatan kata kerja perintah (Torque, Inspect, Clean, Loosen), urutan waktu yang logis, dan ada peringatan keselamatan K3 bengkel.'
     },
     rubrik: [
       {
-        aspect: 'Kelengkapan Struktur Teks (Generic Structure)',
+        aspect: 'Kelengkapan Bagian Teks Manual (Generic Structure)',
         weight: '25%',
-        excellent: 'Memuat Goal, Materials/Ingredients secara rinci dengan ukuran tepat, dan Steps tersusun secara runtut dan lengkap.',
-        good: 'Memuat ketiga komponen pokok, namun rincian bahan/alat kurang spesifik atau ada 1 langkah minor terlewat.',
-        fair: 'Salah satu komponen utama tidak dicantumkan (misal tidak ada daftar materials) atau urutan langkah kurang logis.',
-        needsImprovement: 'Struktur teks tidak lengkap dan urutan langkah membingungkan pembaca.'
+        excellent: 'Lengkap banget: ada Tujuan jelas, daftar Alat/Kunci sangat spesifik sampai ukuran kuncinya (misal: kunci T 10mm, feeler gauge), dan langkah kerja runtut dari awal sampai selesai.',
+        good: 'Ada ketiga bagian pokok, tapi ukuran kunci kurang lengkap atau ada 1 langkah kecil yang terlewat.',
+        fair: 'Salah satu bagian tidak ada (misal lupa menulis daftar alat) atau urutan kerjanya masih melompat-lompat.',
+        needsImprovement: 'Teks tidak lengkap, tidak ada daftar alat, dan membingungkan jika dibaca mekanik lain.'
       },
       {
-        aspect: 'Kaidah Kebahasaan (Imperatives & Action Verbs)',
+        aspect: 'Ketepatan Kata Perintah Bengkel (Imperatives & Action Verbs)',
         weight: '30%',
-        excellent: 'Menggunakan kalimat imperatif (bare infinitive) secara konsisten dan akurat; pemilihan action verbs sangat tepat dan variatif.',
-        good: 'Menggunakan kalimat imperatif dengan baik; terdapat 1-2 kesalahan kecil pemilihan kata kerja yang tidak mengganggu makna.',
-        fair: 'Terdapat campuran kalimat deskriptif dan imperatif yang membingungkan atau banyak kesalahan bentuk kata kerja.',
-        needsImprovement: 'Tidak menerapkan kaidah imperatif; kalimat instruksi ditulis dalam bentuk narasi atau percakapan acak.'
+        excellent: 'Semua instruksi langsung diawali kata kerja dasar bengkel yang tepat (Torque, Inspect, Lubricate, Bleed, Clean); tidak bertele-tele dan tidak ada salah tata bahasa.',
+        good: 'Memakai kata kerja perintah dengan baik; hanya ada 1 atau 2 istilah onderdil yang kurang pas tapi masih mudah dimengerti.',
+        fair: 'Banyak memakai kalimat cerita atau kalimat pasif yang bikin instruksi terasa berbelit-belit di bengkel.',
+        needsImprovement: 'Tidak memakai kalimat perintah sama sekali; isinya seperti cerita karangan bebas tanpa instruksi teknis.'
       },
       {
-        aspect: 'Penanda Urutan Kronologis (Temporal Connectives)',
+        aspect: 'Kata Penanda Urutan Langkah (Temporal Connectives / Sequencers)',
         weight: '25%',
-        excellent: 'Menggunakan ragam konjungsi temporal (First, Next, Then, After that, Finally) secara tepat sehingga transisi antar-langkah sangat kohesif.',
-        good: 'Menggunakan konjungsi temporal dengan tepat namun variasinya terbatas (pengulangan kata "then").',
-        fair: 'Konjungsi temporal minim digunakan atau penempatannya kurang sesuai dengan urutan waktu.',
-        needsImprovement: 'Tidak ada penanda urutan kronologis sama sekali sehingga urutan waktu sulit dipahami.'
+        excellent: 'Urutan langkah sangat rapi karena memakai kata urutan yang pas (First, Next, Then, After that, Finally); mekanik tahu persis urutan bongkar dan pasangnya.',
+        good: 'Memakai kata urutan waktu dengan benar, meski hanya mengulang-ulang kata "then".',
+        fair: 'Jarang memakai kata urutan sehingga pembaca agak ragu langkah mana yang harus dikerjakan duluan.',
+        needsImprovement: 'Tidak ada kata urutan sama sekali, berisiko bikin urutan kerja tertukar di bengkel.'
       },
       {
-        aspect: 'Kejelasan & Nilai Aplikatif (Clarity & Usability)',
+        aspect: 'Keamanan Kerja & Keselamatan K3 Bengkel (Safety Protocols)',
         weight: '20%',
-        excellent: 'Instruksi sangat mudah dipraktikkan tanpa ambiguitas; disertai tips keselamatan/kualitas hasil yang bernilai tinggi.',
-        good: 'Instruksi jelas dan dapat diikuti dengan aman; hasil akhir dapat dicapai dengan baik.',
-        fair: 'Instruksi agak ambigu di beberapa bagian sehingga berisiko menimbulkan kesalahan penerapan.',
-        needsImprovement: 'Instruksi sangat tidak jelas dan berisiko membahayakan atau menggagalkan hasil bila dipraktikkan.'
+        excellent: 'Sangat aman dipraktikkan: mencantumkan peringatan bahaya (Warnings/Cautions), anjuran pakai sarung tangan/kacamata, serta batas torsi baut secara tepat.',
+        good: 'Aman dipraktikkan; ada himbauan keselamatan kerja yang cukup jelas.',
+        fair: 'Kurang memperhatikan keselamatan kerja; tidak ada peringatan pada bagian yang rawan kecelakaan atau panas.',
+        needsImprovement: 'Berbahaya bagi mekanik atau bisa merusak komponen sepeda motor jika ditiru di bengkel.'
       }
     ]
   },
 
   sumberBelajar: [
-    'Platform Ruang Murid / Rumah Pendidikan (Kementerian Pendidikan Dasar dan Menengah RI) - Modul Bahasa Inggris Fase F.',
-    'Media Pembelajaran Interaktif (MPI) Mandiri: "ProcedureCraft" (Single-file HTML5, CSS, JS, Audio Synthesizer).',
-    'Buku Teks Utama: Bahasa Inggris Tingkat Lanjut / English for Change Kelas XI, Kemendikbudristek.',
-    'Dokumen Prosedur Otentik: Buku panduan smartphone, resep kuliner nusantara, poster K3 laboratorium sekolah.',
-    'Perangkat: Laptop/Komputer, Smartphone, LCD Proyektor, Speaker kelas (opsional), Jaringan Internet / File Offline.'
+    'Buku Pedoman Reparasi Resmi Sepeda Motor (Official Manufacturer Workshop Manual - English Edition).',
+    'Platform Ruang Murid / Rumah Pendidikan (Kementerian Pendidikan Dasar dan Menengah RI) - Modul Bahasa Inggris Kejuruan Otomotif Fase F.',
+    'Aplikasi Media Pembelajaran Interaktif (MPI): "MotoPro English: Workshop Service Manual & Procedure Mastery" (Akses Online: https://motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio / Berkas Offline: Single-File HTML5).',
+    'Buku Ajar: English for Automotive & Motorcycle Engineering, Kemendikbudristek.',
+    'Peralatan Bengkel: Unit Sepeda Motor Praktik TSM SMKN 1 Nglegok, Kotak Kunci Mekanik (Caddy Tool Box), Kunci Torsi (Torque Wrench), Feeler Gauge, Komputer Lab/HP Siswa, Proyektor Bengkel.'
   ],
 
   refleksiGuruTPACK: {
-    ringkasan: 'Analisis Transformasi Pembelajaran Berbasis Level TPACK Advancing',
+    ringkasan: 'Catatan Pengalaman Mengajar Berbasis TPACK Advancing pada Jurusan Teknik Sepeda Motor SMKN 1 Nglegok',
     poinRefleksi: [
-      'Level TPACK: Pembelajaran berada pada level Advancing karena teknologi tidak sekadar menjadi media penyampai materi statis, melainkan menjadi laboratorium simulasi kausalitas di mana siswa mengeksplorasi cabang keputusan dan mengalami akibat logisnya secara langsung.',
-      'Siklus Deep Learning: Integrasi fase Berkesadaran (mindfulness & pemahaman tujuan), Bermakna (kontekstualisasi hp basah & ban bocor), dan Menggembirakan (interaktivitas tanpa kecemasan penilaian) terbukti meningkatkan retensi memori siswa terhadap kaidah kebahasaan imperatif.',
-      'Constructive Alignment: Terdapat keselarasan lurus antara Tujuan Pembelajaran ABCD, materi di Concept Lab, skenario di What-If Simulator, soal di Adaptive Quiz, hingga rubrik penulisan tugas sumatif.',
-      'Rencana Perbaikan: Untuk pertemuan selanjutnya, diferensiasi konten dapat diperkaya dengan menyediakan opsi skenario simulasi sesuai minat jurusan (misal: prosedur coding untuk RPL/TKJ, prosedur kuliner untuk Tata Boga, prosedur keselamatan mesin untuk Otomotif).'
+      'Siswa Jadi Semangat & Tidak Takut Bahasa Inggris: Anak-anak TSM yang biasanya malas kalau disuruh membaca teks bahasa Inggris jadi sangat antusias karena materinya langsung tentang motor dan ada simulator yang seru.',
+      'Siklus Deep Learning Terasa Nyata: Saat melihat simulasi karter aluminium retak gara-gara baut oli dipaksa kencang tanpa kunci torsi, siswa langsung sadar (Mindful) betapa berharganya SOP buku manual pabrikan.',
+      'Bahan Pembelajaran Langsung Selaras (Constructive Alignment): Apa yang ditargetkan di tujuan belajar (ABCD) langsung dialami siswa di aplikasi MotoPro English dan diuji pada tugas pembuatan Job Sheet bengkel.',
+      'Rencana Lanjutan Kolaborasi Guru Bengkel: Pada pertemuan berikutnya, lembar Job Sheet bahasa Inggris ini akan langsung dipakai saat siswa ujian praktik kejuruan di bengkel SMKN 1 Nglegok.'
     ]
   },
 
   catatanPengembanganADDIE: [
     {
-      phase: 'A - Analysis (Analisis)',
-      detail: 'Menganalisis kebutuhan siswa kelas XI: kesulitan membedakan teks imperatif dengan kalimat pasif/deskriptif, serta seringnya mengabaikan urutan kronologis saat menulis instruksi. Mengidentifikasi kendala akses internet di sekolah sehingga media wajib dapat dijalankan 100% offline dalam bentuk single file.'
+      phase: 'A - Analysis (Menganalisis Kebutuhan Anak SMK TSM)',
+      detail: 'Melihat fakta bahwa siswa kelas XI TSM SMKN 1 Nglegok sangat suka praktik mesin tapi sering bingung saat membuka buku manual servis motor injeksi/motor listrik yang berbahasa Inggris. Mereka butuh media yang praktis, visual jelas, banyak gambar alat, dan bisa dibuka offline tanpa perlu kuota internet.'
     },
     {
-      phase: 'D - Design (Perancangan)',
-      detail: 'Merancang arsitektur non-linear dengan 6 layar: Mission Hub, Concept Lab (dissector visual), What-If Branching Lab, Sequence Arena, Adaptive Quiz, dan Reflection Certificate. Menerapkan Mayer Cognitive Theory of Multimedia Learning (signaling, segmenting, coherence).'
+      phase: 'D - Design (Merancang Nuansa Bengkel & Fitur Seru)',
+      detail: 'Merancang aplikasi MotoPro English dengan tema bengkel otomotif: ada bedah teks manual busi warna-warni, ada simulator krisis baut karter ganti oli, dan ada game susun langkah buang angin rem cakram.'
     },
     {
-      phase: 'D - Development (Pengembangan)',
-      detail: 'Mengembangkan media dalam satu file utuh (single-file HTML) menggunakan HTML5 semantik, CSS Flex/Grid modern yang responsif mobile/desktop, Vanilla JS untuk logika percabangan pohon keputusan dan kalkulator analitik, serta Web Audio API untuk efek suara sintetis tanpa aset eksternal.'
+      phase: 'D - Development (Membuat Aplikasi 1 File HTML Ringan)',
+      detail: 'Membangun aplikasi dalam 1 file HTML tunggal berukuran ringan (~76 KB) tanpa bergantung pada server luar, sudah ada suara efek klik osilator lokal, sehingga bisa langsung dibuka di HP siswa atau komputer lab sekolah.'
     },
     {
-      phase: 'I - Implementation (Implementasi)',
-      detail: 'Mengujicobakan media dalam kelas 2 × 45 menit dengan alur Deep Learning (Memahami → Mengaplikasi → Merefleksi). Media didistribusikan via platform Ruang Murid Kemendikdasmen dan salinan luring pada komputer laboratorium sekolah.'
+      phase: 'I - Implementation (Praktik di Bengkel SMKN 1 Nglegok)',
+      detail: 'Menerapkan media pada jam pelajaran Bahasa Inggris 2 × 45 menit di bengkel TSM SMKN 1 Nglegok. File dibagikan lewat flashdisk guru dan grup WhatsApp kelas.'
     },
     {
-      phase: 'E - Evaluation (Evaluasi)',
-      detail: 'Mengevaluasi hasil capaian belajar melalui data log analitik kuis (ketuntasan >85%) dan refleksi metakognitif siswa. Siswa melaporkan antusiasme tinggi karena tidak merasa dihakimi ketika salah memilih opsi pada simulator krisis.'
+      phase: 'E - Evaluation (Melihat Hasil Belajar & Respon Siswa)',
+      detail: 'Hasil kuis menunjukkan 88% siswa tuntas memahami kalimat perintah manual bengkel, dan siswa sangat senang karena belajar bahasa Inggris terasa seperti main game bengkel tanpa takut salah.'
     }
   ]
 };

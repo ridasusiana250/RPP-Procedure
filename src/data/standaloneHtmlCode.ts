@@ -5,15 +5,17 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProcedureCraft: Interactive Learning Media (Grade XI)</title>
+  <title>MotoPro English: Interactive Learning Media (Procedure Text for Motorcycle Workshop TSM - SMKN 1 Nglegok)</title>
   <!--
     =============================================================================
-    MEDIA PEMBELAJARAN INTERAKTIF (MPI) - BAHASA INGGRIS KELAS XI
-    Materi Pokok   : Procedure Text (Manuals, Recipes, Tips, Protocols)
-    Kerangka Kerja : TPACK (Advancing Level) & Deep Learning
-    Teknis         : Single-File Pure HTML5, CSS3, & Vanilla JavaScript (No External CDN)
-    Instruksi Guru : Cukup klik ganda (double-click) file ini untuk membuka di browser apa pun (Chrome, Edge, Firefox, Safari).
-                     Bisa dijalankan 100% offline tanpa koneksi internet.
+    MEDIA PEMBELAJARAN INTERAKTIF (MPI) - BAHASA INGGRIS KELAS XI (FASE F)
+    Aplikasi       : MotoPro English (motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio)
+    Satuan / Jurusan: SMKN 1 Nglegok / Teknik Sepeda Motor (TSM / TBSM)
+    Materi Pokok   : Procedure Text (Motorcycle Service Manuals, Maintenance SOP, & Troubleshooting)
+    Kerangka Kerja : TPACK (Advancing Level 5) & Deep Learning Cycle (Mindful, Meaningful, Joyful)
+    Teknis         : Single-File Pure HTML5, CSS3, & Vanilla JavaScript (Zero External CDN)
+    Instruksi Guru : Cukup klik ganda (double-click) file ini untuk membuka di browser apa pun.
+                     100% Offline Mode (tanpa kuota internet) & sinkron dengan RPP Kurikulum Merdeka.
     =============================================================================
   -->
   <style>
@@ -171,10 +173,10 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
 <body>
   <header class="topbar">
     <div class="brand-wrap">
-      <div class="brand-icon">P</div>
+      <div class="brand-icon">🏍️</div>
       <div class="brand-text">
-        <h1>ProcedureCraft</h1>
-        <div class="brand-meta">English XI · Deep Learning & TPACK · SMKN 1 Nglegok</div>
+        <h1>MotoPro English</h1>
+        <div class="brand-meta">English for Motorcycle Workshop · Grade XI TSM · SMKN 1 Nglegok</div>
       </div>
     </div>
     <nav class="nav-links" id="mainNav">
@@ -192,30 +194,31 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
   <main class="container">
     <section id="screen-home" class="screen active">
       <div class="hero-box">
-        <h2>Mastering Procedure Texts: Step-by-Step Mastery</h2>
-        <p>Explore social functions, generic structures, and precision imperative commands. Test your decision-making in life-critical processes.</p>
+        <h2>Mastering Motorcycle Workshop Service Manuals & Procedure Texts</h2>
+        <p>Welcome to MotoPro English! Precision, chronological order, and imperative clarity are the lifeblood of a master motorcycle mechanic at SMKN 1 Nglegok. From interpreting factory workshop manuals (Honda/Yamaha/Suzuki/Kawasaki) and torquing fasteners to bleeding hydraulic disc brakes, explore how English empowers your professional mechanical career!</p>
         <div class="hero-badges">
           <span class="hero-chip">🏫 SMKN 1 Nglegok</span>
-          <span class="hero-chip">🎯 Deep Learning: Berkesadaran</span>
+          <span class="hero-chip">🏍️ Jurusan: Teknik Sepeda Motor (TSM)</span>
+          <span class="hero-chip">🎯 Deep Learning: Berkesadaran, Bermakna, Menggembirakan</span>
           <span class="hero-chip">⚙️ TPACK: Advancing Tier</span>
           <span class="hero-chip">⏱️ Duration: 2 × 45 Mins</span>
-          <span class="hero-chip">🧩 Grade: XI SMKN 1 Nglegok</span>
+          <span class="hero-chip">🌐 motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio</span>
         </div>
       </div>
       <div class="grid-3">
         <div class="card">
-          <div class="card-title">📖 Concept Exploration</div>
-          <p class="card-desc">Deep dive into Social Function, Structure (Goal-Material-Steps), and Linguistic Features.</p>
+          <div class="card-title">📖 Service Manual Anatomy</div>
+          <p class="card-desc">Deep dive into Social Function, Generic Structure (Goal-Tools-Steps), and Imperatives with the authentic Spark Plug SOP.</p>
           <button class="btn btn-primary" onclick="navigateTo('screen-concept')">Launch Concept Lab →</button>
         </div>
         <div class="card">
           <div class="card-title">⚡ "What-If" Crisis Simulator</div>
-          <p class="card-desc">What happens if you skip a crucial step? Test your decisions in the Smartphone Rescue.</p>
+          <p class="card-desc">What happens if you overtighten the drain bolt without a torque wrench? Test your decision-making in the Engine Oil Crisis.</p>
           <button class="btn btn-accent" onclick="navigateTo('screen-branching')">Enter Simulator →</button>
         </div>
         <div class="card">
-          <div class="card-title">🧪 Sequence Arena</div>
-          <p class="card-desc">Arrange scrambled steps into correct chronological order with real-time feedback.</p>
+          <div class="card-title">🧪 Brake Bleeding Sequence Arena</div>
+          <p class="card-desc">Arrange scrambled hydraulic brake servicing steps into exact chronological order with real-time feedback.</p>
           <button class="btn btn-secondary" onclick="navigateTo('screen-builder')">Play Challenge →</button>
         </div>
       </div>
@@ -232,31 +235,31 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
       </div>
       <div id="tab-function" class="concept-tab-content">
         <div class="card">
-          <h3 class="card-title">Communicative Purpose</h3>
-          <p class="card-desc">To describe how something is accomplished through a sequence of actions or steps.</p>
+          <h3 class="card-title">🌟 Communicative Purpose in the Workshop</h3>
+          <p class="card-desc">To guide motorcycle mechanics step-by-step so repairs meet factory standards, engines last long, and riders stay safe on the road.</p>
         </div>
       </div>
       <div id="tab-structure" class="concept-tab-content" style="display: none;">
         <div class="card">
-          <h3 class="card-title">Anatomy of Procedure</h3>
-          <p class="card-desc">1. Goal/Aim · 2. Materials/Ingredients · 3. Steps/Methods</p>
+          <h3 class="card-title">🔧 Anatomy of Service Manuals</h3>
+          <p class="card-desc">1. Goal (e.g. How to Inspect & Gap Spark Plug) · 2. Tools (16mm socket, feeler gauge 0.85mm) · 3. Steps (Torque to 16 N·m).</p>
         </div>
       </div>
       <div id="tab-language" class="concept-tab-content" style="display: none;">
         <div class="card">
-          <h3 class="card-title">Language Features</h3>
-          <p class="card-desc">Imperative sentences, Action verbs, Temporal sequencers, Adverbials.</p>
+          <h3 class="card-title">🔤 Mechanic Language Features</h3>
+          <p class="card-desc">Imperative commands (Torque, Inspect, Clean, Bleed), Temporal sequencers (First, Next, Finally), and precise measurement numbers.</p>
         </div>
       </div>
     </section>
     <!-- Screen 3: Branching Simulator -->
     <section id="screen-branching" class="screen">
       <div class="card">
-        <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">"What-If" Crisis Simulator</h2>
+        <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">"What-If" Workshop Crisis Simulator</h2>
         <div class="sim-device-visual" id="simVisual">
-          <div style="font-size: 2.5rem;" id="simEmoji">📱💦</div>
-          <h4 id="simStatusHeading">Phone dropped in water!</h4>
-          <p id="simStatusDesc">What is your immediate action?</p>
+          <div style="font-size: 2.5rem;" id="simEmoji">🏍️🛢️</div>
+          <h4 id="simStatusHeading">Motorcycle Oil Service</h4>
+          <p id="simStatusDesc">What is your immediate action when draining warm engine oil?</p>
         </div>
         <div id="simOptionsContainer"></div>
         <div class="sim-feedback" id="simFeedbackBox"></div>
@@ -269,8 +272,8 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
     <!-- Screen 4: Sequence Arena -->
     <section id="screen-builder" class="screen">
       <div class="card">
-        <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Sequence Arena</h2>
-        <p class="card-desc">Order the steps: "How to Safely Replace a Flat Tire on the Roadside".</p>
+        <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Sequence Arena: Motorcycle Disc Brake Bleeding</h2>
+        <p class="card-desc">Order the steps: "How to Bleed and Service a Motorcycle Hydraulic Disc Brake".</p>
         <div id="stepListContainer"></div>
         <div style="margin-top: 1rem; display: flex; gap: 0.5rem; align-items: center;">
           <button class="btn btn-accent" onclick="checkSequenceOrder()">✅ Check Order</button>
@@ -281,7 +284,7 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
     </section>
     <!-- Screen 5: Quiz -->
     <section id="screen-quiz" class="screen">
-      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Adaptive Mastery Quiz</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Adaptive Mastery Quiz: Motorcycle Engineering</h2>
       <div id="quizContainer"></div>
       <div class="card" id="quizSummaryCard" style="display: none; text-align: center;">
         <h3>Quiz Finished! Score: <span id="finalQuizScore"></span></h3>
@@ -310,9 +313,9 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
       </div>
       <div class="certificate-card" id="certificateCard">
         <div class="cert-seal">🏆</div>
-        <h3>Certificate of Procedural Competence</h3>
+        <h3>Certificate of Procedural Competence in Motorcycle Engineering</h3>
         <h2 id="certStudentName" style="color: var(--primary); margin: 0.5rem 0;">Student</h2>
-        <p>Mastered Procedure Text - Grade XI SMKN 1 Nglegok (TPACK Advancing Level)</p>
+        <p>Mastered Procedure Text: Motorcycle Workshop SOP & Manuals - Grade XI TSM SMKN 1 Nglegok (TPACK Advancing Level)</p>
         <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="window.print()">🖨️ Print Certificate</button>
       </div>
     </section>
@@ -335,17 +338,17 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
     }
     const simStages = [
       {
-        title: "Stage 1", status: "Phone dropped in water!", emoji: "📱💦",
+        title: "Stage 1", status: "Motorcycle warm on center stand!", emoji: "🏍️🛢️",
         options: [
-          { text: "Turn on immediately to check screen", feedback: "❌ Short-circuit burned motherboard!", ok: false },
-          { text: "Power off completely and remove case", feedback: "✅ Great! Electrical isolation prevented damage.", ok: true }
+          { text: "Unscrew drain bolt with bare hands after hot race", feedback: "❌ Scalding oil burns! Always wear workshop gloves.", ok: false },
+          { text: "Unscrew 12mm bolt over drain pan with gloves", feedback: "✅ Great! Warm oil drains contaminants suspended cleanly.", ok: true }
         ]
       },
       {
-        title: "Stage 2", status: "Drying process", emoji: "💨",
+        title: "Stage 2", status: "Drain bolt installation", emoji: "🔧⚙️",
         options: [
-          { text: "Use high-heat hair dryer", feedback: "❌ Heat melted internal rubber seals!", ok: false },
-          { text: "Use cool air fan / silica gel for 48 hrs", feedback: "✅ Perfect! Safe desiccation completed.", ok: true }
+          { text: "Overtighten with 50cm breaker bar using body weight", feedback: "❌ Stripped soft aluminum crankcase threads!", ok: false },
+          { text: "Install new crush washer, thread by hand, torque to 24 N·m", feedback: "✅ Perfect! Exact torque ensures leak-free seal safely.", ok: true }
         ]
       }
     ];
@@ -378,12 +381,12 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
     }
     function restartSimulator() { state.simStep = 0; renderSimulatorStage(); }
     const steps = [
-      { id: 1, text: "Pull over to a flat, safe surface and turn on hazards." },
-      { id: 2, text: "Engage parking brake and place wheel chocks." },
-      { id: 3, text: "Loosen lug nuts slightly before raising the vehicle." },
-      { id: 4, text: "Position jack under frame and lift car." },
-      { id: 5, text: "Remove flat tire, mount spare, and hand-tighten nuts." },
-      { id: 6, text: "Lower car and firmly tighten lug nuts with wrench." }
+      { id: 1, text: "Position motorcycle on center stand and protect fairings with shop rags." },
+      { id: 2, text: "Remove master cylinder cap and top up with clean DOT 4 brake fluid." },
+      { id: 3, text: "Attach clear bleeder hose to caliper nipple and submerge in catch jar." },
+      { id: 4, text: "Pump brake lever 3-4 times, then hold firmly against handlebar." },
+      { id: 5, text: "Crack open bleed valve quarter-turn to expel air, then close before releasing lever." },
+      { id: 6, text: "Repeat until air-free, torque nipple to 6 N·m, and secure reservoir cap." }
     ];
     let curSteps = [...steps].sort(() => Math.random() - 0.5);
     function renderSteps() {
@@ -414,9 +417,9 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
     }
     function resetSequenceOrder() { curSteps.sort(() => Math.random() - 0.5); renderSteps(); document.getElementById('sequenceFeedback').textContent = ''; }
     const quiz = [
-      { q: "What is the social function of a procedure text?", opts: ["To narrate a past tale", "To explain sequential steps to complete a task", "To persuade voters"], ans: 1 },
-      { q: "Which word signals an imperative action?", opts: ["Carefully", "Stir the mixture gently", "Delicious"], ans: 1 },
-      { q: "Which temporal connector marks the end?", opts: ["First", "Meanwhile", "Finally"], ans: 2 }
+      { q: "What is the primary function of a motorcycle service manual?", opts: ["To narrate road trips", "To provide standardized sequential repair instructions and torque specs", "To sell new helmets"], ans: 1 },
+      { q: "Which imperative command is correct in a brake service procedure?", opts: ["You should torque", "Torque caliper mounting bolts to 30 N·m with a torque wrench", "Braking quickly"], ans: 1 },
+      { q: "Why must the brake bleed valve be closed BEFORE releasing the lever?", opts: ["To save battery", "To prevent air from being sucked back into the caliper", "To change fluid color"], ans: 1 }
     ];
     function renderQuiz() {
       const c = document.getElementById('quizContainer');

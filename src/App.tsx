@@ -81,7 +81,7 @@ export default function App() {
             <span aria-hidden="true">·</span>
             <span>Perangkat Pembelajaran Digital Terintegrasi</span>
             <span aria-hidden="true">·</span>
-            <span>SMKN 1 Nglegok (Fase F)</span>
+            <span>Teknik Sepeda Motor (TSM) · SMKN 1 Nglegok (Fase F)</span>
           </div>
           <div className="flex items-center gap-4">
             <button

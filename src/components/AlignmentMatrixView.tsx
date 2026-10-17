@@ -6,39 +6,39 @@ export const AlignmentMatrixView: React.FC = () => {
   const alignmentData = [
     {
       code: 'TP-1',
-      competency: 'Fungsi Sosial & Struktur Teks (Social Function & Generic Structure)',
+      competency: 'Fungsi Sosial & Struktur Manual Servis Sepeda Motor (Goal, Tools, Steps)',
       deepLearning: 'Memahami (Meaningful Understanding)',
-      mpiScreen: 'Screen 02: Concept Lab (Interactive Color-Coded Dissector & 4 Types Tab)',
+      mpiScreen: 'Screen 02: Concept Lab (Interactive Color-Coded Dissector: Spark Plug & Brake SOP)',
       tpackDomain: 'CK + PCK (Pedagogical Content Knowledge)',
-      formativeEvidence: 'Ketepatan identifikasi anatomi Goal, Material, Steps pada teks Wedang Jahe & skor kuis Q1-Q2 (Bobot 40%)',
-      summativeMetric: 'Kelengkapan susunan Generic Structure pada rubrik penulisan produk'
+      formativeEvidence: 'Ketepatan identifikasi anatomi Goal, Tools (feeler gauge, wrench), Steps pada manual servis motor & skor kuis Q1-Q2 (Bobot 40%)',
+      summativeMetric: 'Kelengkapan susunan Generic Structure pada rubrik Job Sheet servis berkala'
     },
     {
       code: 'TP-2',
-      competency: 'Kausalitas & Urutan Kronologis (Branching & Cause-Effect Reasoning)',
+      competency: 'Kausalitas & Skenario Percabangan Kerusakan Mesin (Mechanical Troubleshooting)',
       deepLearning: 'Mengaplikasi (Joyful Experiential Simulation)',
-      mpiScreen: 'Screen 03: "What-If" Crisis Simulator (Waterlogged Phone Rescue)',
+      mpiScreen: 'Screen 03: "What-If" Crisis Simulator (Motorcycle Engine Oil & Drain Bolt Torquing)',
       tpackDomain: 'TCK (Technological Content Knowledge)',
-      formativeEvidence: 'Keberhasilan menavigasi pohon keputusan tanpa menyebabkan short-circuit atau kerusakan termal & skor kuis Q5 (Bobot 20%)',
-      summativeMetric: 'Kejelasan alur tahapan tanpa ada langkah kritis yang terlewat pada draf manual'
+      formativeEvidence: 'Keberhasilan menavigasi pohon keputusan tanpa menyebabkan ulir karter jebol atau kebocoran pelumas & skor kuis Q5 (Bobot 20%)',
+      summativeMetric: 'Kejelasan alur tahapan tanpa ada langkah keselamatan K3 yang terlewat pada Job Sheet bengkel'
     },
     {
       code: 'TP-3',
-      competency: 'Kaidah Kebahasaan (Imperatives, Action Verbs, Temporal Sequencers)',
+      competency: 'Kaidah Kebahasaan & Penataan SOP Rem Cakram Motor (Imperatives & Sequencers)',
       deepLearning: 'Mengaplikasi (Hands-On Active Reordering)',
-      mpiScreen: 'Screen 04: Chronological Sequence Arena & Grammar Explorer',
+      mpiScreen: 'Screen 04: Chronological Sequence Arena (Motorcycle Hydraulic Disc Brake Bleeding)',
       tpackDomain: 'TPK + TK (Technological Pedagogical Knowledge)',
-      formativeEvidence: 'Perolehan ketuntasan 100% pada penataan 6 langkah ganti ban mobil & kuis Q3-Q4 (Bobot 40%)',
-      summativeMetric: 'Konsistensi penggunaan bare infinitives dan variasi sequencers pada teks produk'
+      formativeEvidence: 'Perolehan ketuntasan 100% pada penataan 6 langkah bleeding rem hidrolik sepeda motor & kuis Q3-Q4 (Bobot 40%)',
+      summativeMetric: 'Konsistensi penggunaan bare infinitive commands dan parameter torsi/tekanan pada Job Sheet'
     },
     {
       code: 'TP-4',
-      competency: 'Sintesis Mandiri & Refleksi Metakognitif (Production & Metacognition)',
-      deepLearning: 'Merefleksi (Mindful Synthesis & Real-World Transfer)',
-      mpiScreen: 'Screen 06: Reflective Synthesis & Digital Certification',
+      competency: 'Sintesis Mandiri & Refleksi Etika K3 Mekanik (Production & Metacognition)',
+      deepLearning: 'Merefleksi (Mindful Synthesis & Vocational Transfer)',
+      mpiScreen: 'Screen 06: Reflective Synthesis & Digital Certification (TSM Edition)',
       tpackDomain: 'TPACK (Advancing Level 5 Transformative Synergy)',
-      formativeEvidence: 'Isian refleksi diri (rating bintang & komitmen aplikasi kehidupan sehari-hari) serta penerbitan sertifikat XP',
-      summativeMetric: 'Tugas portofolio mandiri: Penulisan teks prosedur otentik di Ruang Murid Kemendikdasmen'
+      formativeEvidence: 'Isian refleksi diri (rating bintang, komitmen etika keselamatan mekanik) serta penerbitan sertifikat digital TSM SMKN 1 Nglegok',
+      summativeMetric: 'Tugas portofolio mandiri: Penyusunan Job Sheet Servis Berkala Sepeda Motor di Ruang Murid Kemendikdasmen'
     }
   ];
 
@@ -51,13 +51,15 @@ export const AlignmentMatrixView: React.FC = () => {
           <span>·</span>
           <span>BIGGS FRAMEWORK</span>
           <span>·</span>
-          <span className="text-amber-700 font-semibold">100% TERINTEGRASI</span>
+          <span className="text-sky-700 font-semibold">SMKN 1 NGLEGOK (TSM)</span>
+          <span>·</span>
+          <span className="text-emerald-700 font-semibold">100% TERINTEGRASI</span>
         </div>
         <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
-          Matriks Penyelarasan Konstruktif (Constructive Alignment Matrix)
+          Matriks Penyelarasan Konstruktif: RPP TPACK ↔ MotoPro English
         </h1>
         <p className="text-sm text-slate-600 mt-1 max-w-3xl">
-          Bukti konkret bahwa setiap butir dalam RPP (Output 1) dan alur interaktif pada MPI (Output 2) selaras secara mutualistik: apa yang dirumuskan dalam tujuan diuji secara autentik di dalam media dan dinilai dengan rubrik HOTS.
+          Bukti audit validasi bahwa RPP Berbasis TPACK & Deep Learning telah <strong>100% selaras (Constructive Alignment)</strong> dengan Media Pembelajaran Interaktif <strong>MotoPro English</strong> (<a href="https://motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio" target="_blank" rel="noreferrer" className="text-sky-700 font-semibold underline">motopro-english-mpi-teks-prosedur-bengkel-tsm-smk.ai.studio</a>): setiap kompetensi di RPP dialami langsung secara interaktif di layar MPI dan dinilai secara presisi.
         </p>
       </div>
 
