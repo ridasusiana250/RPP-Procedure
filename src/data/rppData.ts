@@ -29,7 +29,7 @@ export interface RubricCriterion {
 
 export const rppDocument = {
   identitas: {
-    satuanPendidikan: 'SMA / SMK Negeri Indonesia (Fase F)',
+    satuanPendidikan: 'SMKN 1 Nglegok (Fase F)',
     mataPelajaran: 'Bahasa Inggris',
     kelasSemester: 'XI (Sebelas) / Ganjil',
     materiPokok: 'Procedure Text (Recipes, Manuals, Lifehacks, Protocols)',

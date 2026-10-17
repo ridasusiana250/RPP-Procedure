@@ -28,7 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 ProcedureCraft
               </span>
               <div className="text-[11px] text-slate-500 font-medium whitespace-nowrap">
-                TPACK & MPI Bahasa Inggris XI
+                TPACK & MPI Bahasa Inggris XI · SMKN 1 Nglegok
               </div>
             </div>
           </div>

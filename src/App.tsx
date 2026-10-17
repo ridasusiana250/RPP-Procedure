@@ -10,8 +10,28 @@ import { STANDALONE_MPI_CODE } from './data/standaloneHtmlCode';
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('rpp');
 
-  const handleDownloadHtml = () => {
-    // Generate clean blob and download
+  const handleDownloadHtml = async () => {
+    try {
+      // Fetch the full standalone HTML file from public/
+      const res = await fetch('/procedure_text_mpi.html');
+      if (res.ok) {
+        const fullHtml = await res.text();
+        const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'procedure_text_mpi.html';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        return;
+      }
+    } catch (e) {
+      console.warn('Falling back to local template:', e);
+    }
+
+    // Fallback if fetch is unavailable
     const blob = new Blob([STANDALONE_MPI_CODE], { type: 'text/html;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
@@ -61,7 +81,7 @@ export default function App() {
             <span aria-hidden="true">·</span>
             <span>Perangkat Pembelajaran Digital Terintegrasi</span>
             <span aria-hidden="true">·</span>
-            <span>Bahasa Inggris Kelas XI (Fase F)</span>
+            <span>SMKN 1 Nglegok (Fase F)</span>
           </div>
           <div className="flex items-center gap-4">
             <button

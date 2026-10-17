@@ -112,13 +112,15 @@ export const RPPView: React.FC = () => {
               <span>·</span>
               <span>KURIKULUM MERDEKA (FASE F)</span>
               <span>·</span>
+              <span className="text-sky-700 font-semibold">SMKN 1 NGLEGOK</span>
+              <span>·</span>
               <span className="text-emerald-700 font-semibold">TPACK ADVANCING</span>
             </div>
             <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
               Rencana Pelaksanaan Pembelajaran (RPP) Berbasis TPACK & Deep Learning
             </h1>
             <p className="text-sm text-slate-600 mt-1 max-w-3xl">
-              Model pembelajaran mendalam (Mindful, Meaningful, Joyful) terintegrasi dengan Media Pembelajaran Interaktif (MPI) mandiri untuk penguasaan Teks Prosedur Bahasa Inggris Kelas XI.
+              Model pembelajaran mendalam (Mindful, Meaningful, Joyful) terintegrasi dengan Media Pembelajaran Interaktif (MPI) mandiri untuk penguasaan Teks Prosedur Bahasa Inggris Kelas XI SMKN 1 Nglegok.
             </p>
           </div>
 

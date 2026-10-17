@@ -174,7 +174,7 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
       <div class="brand-icon">P</div>
       <div class="brand-text">
         <h1>ProcedureCraft</h1>
-        <div class="brand-meta">English XI · Deep Learning & TPACK Media</div>
+        <div class="brand-meta">English XI · Deep Learning & TPACK · SMKN 1 Nglegok</div>
       </div>
     </div>
     <nav class="nav-links" id="mainNav">
@@ -195,10 +195,11 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
         <h2>Mastering Procedure Texts: Step-by-Step Mastery</h2>
         <p>Explore social functions, generic structures, and precision imperative commands. Test your decision-making in life-critical processes.</p>
         <div class="hero-badges">
+          <span class="hero-chip">🏫 SMKN 1 Nglegok</span>
           <span class="hero-chip">🎯 Deep Learning: Berkesadaran</span>
           <span class="hero-chip">⚙️ TPACK: Advancing Tier</span>
           <span class="hero-chip">⏱️ Duration: 2 × 45 Mins</span>
-          <span class="hero-chip">🧩 Grade: XI SMA/SMK</span>
+          <span class="hero-chip">🧩 Grade: XI SMKN 1 Nglegok</span>
         </div>
       </div>
       <div class="grid-3">
@@ -311,7 +312,7 @@ export const STANDALONE_MPI_CODE = `<!DOCTYPE html>
         <div class="cert-seal">🏆</div>
         <h3>Certificate of Procedural Competence</h3>
         <h2 id="certStudentName" style="color: var(--primary); margin: 0.5rem 0;">Student</h2>
-        <p>Mastered Procedure Text - Grade XI (TPACK Advancing Level)</p>
+        <p>Mastered Procedure Text - Grade XI SMKN 1 Nglegok (TPACK Advancing Level)</p>
         <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="window.print()">🖨️ Print Certificate</button>
       </div>
     </section>
